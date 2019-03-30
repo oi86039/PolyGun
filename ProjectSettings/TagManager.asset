@@ -6,6 +6,11 @@ TagManager:
   tags:
   - gun
   - teleporter
+  - laser
+  - Play
+  - Quit
+  - teleporter_special
+  - tCube
   layers:
   - Default
   - TransparentFX

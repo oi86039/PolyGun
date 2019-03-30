@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 54821523355288322}
   m_Layer: 0
   m_Name: TeleportCube
-  m_TagString: Untagged
+  m_TagString: tCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   current: 0
   timer: 0
   timeLimit: 2.25
+  SceneTimeLimit: 0
 --- !u!114 &114410482286430932
 MonoBehaviour:
   m_ObjectHideFlags: 1

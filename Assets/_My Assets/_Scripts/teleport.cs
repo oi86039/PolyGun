@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class teleport : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class teleport : MonoBehaviour
 
     public float timer;
     public float timeLimit = 2;
+
+    float SceneTimer;
+    public float SceneTimeLimit;
+    bool special; //if hit special teleporter
 
     // Use this for initialization
     void Start()
@@ -59,15 +64,22 @@ public class teleport : MonoBehaviour
                 }
             }
             else timer = 0;//Turn off teleporters
-
         }
 
-
+        if (special)
+        {
+            SceneTimer += Time.deltaTime;
+            if (SceneTimer >= SceneTimeLimit)
+            {
+                Debug.Log("sce");
+                SceneManager.LoadScene("Test Level");
+            }
+        }
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("teleporter"))
+        if (other.gameObject.CompareTag("teleporter") || other.gameObject.CompareTag("teleporter_special"))
         {
             spawnPos = other.gameObject.transform.parent.Find("spawnPos").gameObject; //Replace current spawnPos with touched one.
             gunPos = other.gameObject.transform.parent.Find("GunPos").gameObject.transform.position; //Replace current spawnPos with touched one.
@@ -81,7 +93,16 @@ public class teleport : MonoBehaviour
             gun.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             gun.gameObject.GetComponent<gun>().originalPos = gunPos;
             gun.gameObject.GetComponent<gun>().originalRot = gunRot;
+
+            if (other.gameObject.CompareTag("teleporter_special")) special = true;
             //other.gameObject.transform.parent.gameObject.SetActive(false); //Set teleporter = false
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("laser")) {
+            hotBod.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
         }
     }
 }
