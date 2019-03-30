@@ -21,8 +21,9 @@ public class gun : MonoBehaviour
     public Text AmmoText;
     public Text LeftIndicator;
     public Text ModeIndicator; //Indicates fire mode
-    private Vector3 originalPos; //Original position of gun
-    private Quaternion originalRot; //Original rotation of gun
+    public GameObject ReloadIndicator; //Says to press x/b
+    public Vector3 originalPos; //Original position of gun
+    public Quaternion originalRot; //Original rotation of gun
     private ParticleSystem shootSpark;
 
     bool TriggerInput;
@@ -90,7 +91,7 @@ public class gun : MonoBehaviour
                         break;
                 }
                 ReloadInput = OVRInput.Get(OVRInput.Button.Three); //Left hand
-                fireModeInput = OVRInput.Get(OVRInput.Button.Four);
+                fireModeInput = OVRInput.GetDown(OVRInput.Button.Four);
             }
             else if (grabbable.grabbedBy == RightGrabber)
             {
@@ -131,7 +132,13 @@ public class gun : MonoBehaviour
             //If not grabbing
             timer += Time.deltaTime;
             //Respawn Gun
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick) || timer >= timeLimit)
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick))
+            {
+                timer = timeLimit+5;
+            }
+
+            //Move gun back to center
+            if (timer >= timeLimit)
             {
                 RespawnGun();
             }
@@ -228,12 +235,15 @@ public class gun : MonoBehaviour
 
     void RespawnGun() //Reset gun position to teleported position
     {
-        transform.position = originalPos;
-        transform.rotation = originalRot;
-        hotBod.constraints = RigidbodyConstraints.FreezeAll;
-        timer = 0.0f;
-        sound.clip = audios[9];
-        sound.Play();
+        //timer = 0.0f;
+        transform.position = Vector3.MoveTowards(transform.position, originalPos, 0.15f);
+
+        if (transform.position == originalPos)
+        {
+            timer = 0.0f;
+            transform.rotation = originalRot;
+            hotBod.constraints = RigidbodyConstraints.FreezeAll;
+        }
     }
 
     IEnumerator BurstFire()
@@ -261,6 +271,7 @@ public class gun : MonoBehaviour
         //Check PistolAmmo
         if (PistolAmmo > 0)
         {
+            ReloadIndicator.SetActive(false);
             if (PistolAmmo == 30) //Full 
                 AmmoText.color = Color.green;
             else if (PistolAmmo > 6) //Normal
@@ -277,6 +288,7 @@ public class gun : MonoBehaviour
 
         else if (reserve > 0) //Reloadable
         {
+            ReloadIndicator.SetActive(true);
             AmmoText.color = new Color(244 / 255f, 119 / 255f, 17 / 255f); //Orange
             if (flag == 1)
             {
@@ -291,6 +303,7 @@ public class gun : MonoBehaviour
 
         else //Empty
         {
+            ReloadIndicator.SetActive(false);
             AmmoText.color = Color.red;
             if (flag == 1)
             {
