@@ -17,9 +17,11 @@ public class teleport : MonoBehaviour
     public Quaternion gunRot; //Where Pistol will spawn
     public Vector3 offset;
     public Teleport_Manager manager;
-    private Rigidbody hotBod;
-    private OVRGrabbable grabbable;
+    public Rigidbody hotBod;
+    public OVRGrabbable grabbable;
     public int current; //Current teleporter
+
+    bool moveToTeleport;
 
     public float timer;
     public float timeLimit = 2;
@@ -31,13 +33,14 @@ public class teleport : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        hotBod.constraints = RigidbodyConstraints.FreezeAll;
         current = manager.teleporters.Length + 1;
         cubePos = transform.position;
         cubeRot = transform.rotation;
         gunPos = gun.transform.position;
         gunRot = gun.transform.rotation;
         hotBod = GetComponent<Rigidbody>();
-        grabbable = GetComponent<OVRGrabbable>();
+       // grabbable = GetComponent<OVRGrabbable>();
     }
 
     // Update is called once per frame
@@ -63,7 +66,20 @@ public class teleport : MonoBehaviour
                     //transform.rotation = cubeRot;
                 }
             }
-            else timer = 0;//Turn off teleporters
+            else
+            {
+                hotBod.constraints = RigidbodyConstraints.FreezePosition;
+                timer = 0;
+            }//Turn off teleporters
+        }
+
+        if (moveToTeleport) { //Teleport player slowly
+            if (player.transform.position != spawnPos.transform.position) { 
+                player.transform.position = Vector3.MoveTowards(player.transform.position, spawnPos.transform.position, 0.13f);
+                //Play sound
+            }
+            else
+                moveToTeleport = false;
         }
 
         if (special)
@@ -85,7 +101,7 @@ public class teleport : MonoBehaviour
             gunPos = other.gameObject.transform.parent.Find("GunPos").gameObject.transform.position; //Replace current spawnPos with touched one.
             cubePos = other.gameObject.transform.parent.Find("CubePos").gameObject.transform.position; //Replace current spawnPos with touched one.;
             //Play teleport fx
-            player.transform.position = spawnPos.transform.position;
+             moveToTeleport = true;
             gun.position = gunPos;
             gun.rotation = gunRot;
             transform.position = cubePos;
@@ -101,7 +117,8 @@ public class teleport : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("laser")) {
+        if (collision.gameObject.CompareTag("laser"))
+        {
             hotBod.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
         }
     }
