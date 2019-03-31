@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 
 --- !u!1 &1217700713052784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,6 +5895,7 @@ MonoBehaviour:
   leftHandedMode: 0
   QuitTimeLimit: 5
   Quit: {fileID: 7040995520568831876}
+  hotBod: {fileID: 54649131082662272}
   lazur: {fileID: 1689458338255908, guid: bf7a88ab05afd1b4fb70c2e9fdbacf4a, type: 3}
   spawnPos: {fileID: 4106088319427728}
   AmmoText: {fileID: 114706811188859478}
@@ -5910,8 +5911,8 @@ MonoBehaviour:
   fireRate: 800
   firing: 0
   ammo: 30
-  reserve: 90
-  EmptyTimeLimit: 30
+  reserve: 150
+  EmptyTimeLimit: 3
   audios:
   - {fileID: 8300000, guid: 95e838e0a30c748cb9d08f70fd02e578, type: 3}
   - {fileID: 8300000, guid: 3c1de4fe05be44abe9dfc42da59d5269, type: 3}

@@ -38,6 +38,8 @@ public class teleport : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        player = GameObject.Find("LocalAvatarWithGrab").transform;
+        gun = GameObject.Find("Functional Pistol").transform;
         hotBod.constraints = RigidbodyConstraints.FreezeAll;
        // current = manager.teleporters.Length + 1;
         cubePos = transform.position;
@@ -114,10 +116,7 @@ public class teleport : MonoBehaviour
             if (SceneTimer >= SceneTimeLimit)
             {
                 Debug.Log("sce");
-                if (SceneManager.GetActiveScene().buildIndex == 1) //Main Level
-                    SceneManager.LoadScene(2); //Load Win Screen
-                else
-                    SceneManager.LoadScene(1); //Load Win Screen
+                SceneManager.LoadScene(1);
             }
         }
 

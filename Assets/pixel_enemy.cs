@@ -28,6 +28,9 @@ public class pixel_enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("LocalAvatarWithGrab");
+        timeLimit = Random.Range(1, 3);
+        horizontalSpeed = Random.Range(0.1f, 0.5f);
         cubes_Count = transform.childCount;
         foreach (Transform child in transform)
         {//Set health for all child objects

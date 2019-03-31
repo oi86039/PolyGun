@@ -120,12 +120,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906ac76f27f0af3408e43b99061310f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dead: 0
   cubes_Count: 0
   health: 1
-  timeLimit: 0
-  distThreshold: 0
+  damage: 0
+  timeLimit: 10
+  horizontalSpeed: 0.3
+  verticalSpeed: 1
+  distThreshold: 10
   Player: {fileID: 0}
-  evil_projectile: {fileID: 0}
+  TimeLimit: 3
+  distance: 0
   id: 0
 --- !u!1001 &8803324158021473174
 PrefabInstance:
@@ -134,6 +139,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (12)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,11 +214,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (12)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241012095380 stripped
@@ -224,6 +229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (33)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -294,11 +304,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (33)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240960596312 stripped
@@ -314,6 +319,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (60)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -384,11 +394,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (60)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240973120874 stripped
@@ -404,6 +409,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (26)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -474,11 +484,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (26)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240870344469 stripped
@@ -494,6 +499,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (44)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -564,11 +574,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (44)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240814256219 stripped
@@ -584,6 +589,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (50)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -654,11 +664,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (50)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240818964628 stripped
@@ -674,6 +679,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (36)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -744,11 +754,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (36)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240830064771 stripped
@@ -764,6 +769,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (47)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -834,11 +844,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (47)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240780818236 stripped
@@ -854,6 +859,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (16)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,11 +934,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (16)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240801038404 stripped
@@ -944,6 +949,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (51)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,11 +1024,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (51)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241218413177 stripped
@@ -1034,6 +1039,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (52)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1104,11 +1114,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (52)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241223442830 stripped
@@ -1124,6 +1129,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (39)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1194,11 +1204,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (39)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241156222393 stripped
@@ -1214,6 +1219,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (58)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1284,11 +1294,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (58)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241180812121 stripped
@@ -1304,6 +1309,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (45)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1374,11 +1384,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (45)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241119870472 stripped
@@ -1394,6 +1399,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1464,11 +1474,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (5)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241141038695 stripped
@@ -1484,6 +1489,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (20)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1554,11 +1564,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (20)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241135423207 stripped
@@ -1574,6 +1579,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (11)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1644,11 +1654,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (11)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241082546309 stripped
@@ -1664,6 +1669,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (42)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1734,11 +1744,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (42)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241017691484 stripped
@@ -1754,6 +1759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (19)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1824,11 +1834,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (19)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240464839253 stripped
@@ -1844,6 +1849,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (8)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1914,11 +1924,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (8)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240435483022 stripped
@@ -1934,6 +1939,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (37)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2004,11 +2014,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (37)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240400453895 stripped
@@ -2024,6 +2029,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (43)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2094,11 +2104,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (43)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240359324682 stripped
@@ -2114,6 +2119,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (32)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2184,11 +2194,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (32)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240364970982 stripped
@@ -2204,6 +2209,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2274,11 +2284,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240329405113 stripped
@@ -2294,6 +2299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2364,11 +2374,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &6489065383400823851 stripped
@@ -2384,6 +2389,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (49)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2454,11 +2464,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (49)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240237396208 stripped
@@ -2474,6 +2479,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (15)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2544,11 +2554,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (15)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240226333235 stripped
@@ -2564,6 +2569,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (27)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2634,11 +2644,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (27)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240715049579 stripped
@@ -2654,6 +2659,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2724,11 +2734,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240718076488 stripped
@@ -2744,6 +2749,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (6)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2814,11 +2824,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (6)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240682074168 stripped
@@ -2834,6 +2839,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (21)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2904,11 +2914,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (21)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240684082329 stripped
@@ -2924,6 +2929,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (29)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2994,11 +3004,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (29)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240665022607 stripped
@@ -3014,6 +3019,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (18)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3084,11 +3094,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (18)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240593244431 stripped
@@ -3104,6 +3109,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3174,11 +3184,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240582831285 stripped
@@ -3194,6 +3199,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (7)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3264,11 +3274,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (7)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240554156460 stripped
@@ -3284,6 +3289,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (25)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3354,11 +3364,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (25)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240570192083 stripped
@@ -3374,6 +3379,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (10)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3444,11 +3454,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (10)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506240536506501 stripped
@@ -3464,6 +3469,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (35)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3534,11 +3544,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (35)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242068891809 stripped
@@ -3554,6 +3559,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (46)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3624,11 +3634,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (46)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242086089380 stripped
@@ -3644,6 +3649,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (53)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3714,11 +3724,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (53)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242029644213 stripped
@@ -3734,6 +3739,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (38)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3804,11 +3814,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (38)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242051367794 stripped
@@ -3824,6 +3829,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3894,11 +3904,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241931228292 stripped
@@ -3914,6 +3919,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (22)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3984,11 +3994,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (22)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241926510060 stripped
@@ -4004,6 +4009,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (17)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4074,11 +4084,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (17)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241912292047 stripped
@@ -4094,6 +4099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (54)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4164,11 +4174,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (54)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241910792420 stripped
@@ -4184,6 +4189,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4254,11 +4264,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &6489065381786297560 stripped
@@ -4274,6 +4279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (41)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4344,11 +4354,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (41)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242343023355 stripped
@@ -4364,6 +4369,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (59)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4434,11 +4444,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (59)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242259506442 stripped
@@ -4454,6 +4459,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (48)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4524,11 +4534,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (48)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242242403878 stripped
@@ -4544,6 +4549,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (40)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4614,11 +4624,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (40)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506242158646307 stripped
@@ -4634,6 +4639,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4704,36 +4714,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860894967356176179, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860894967356176179, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860894967356176179, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860894967356176179, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8860894967356176179, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.02
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!1 &155506242150290827 stripped
@@ -4755,6 +4735,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4825,11 +4810,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &6489065382229403267 stripped
@@ -4845,6 +4825,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (13)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4915,11 +4900,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (13)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241381263927 stripped
@@ -4935,6 +4915,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5005,11 +4990,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (4)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &6489065382270498741 stripped
@@ -5025,6 +5005,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (55)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5095,11 +5080,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (55)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241343997529 stripped
@@ -5115,6 +5095,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (28)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5185,11 +5170,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (28)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241793567694 stripped
@@ -5205,6 +5185,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (31)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5275,11 +5260,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (31)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241785452572 stripped
@@ -5295,6 +5275,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (30)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5365,11 +5350,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (30)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241729352397 stripped
@@ -5385,6 +5365,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (23)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5455,11 +5440,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (23)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241741530281 stripped
@@ -5475,6 +5455,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube
+      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5545,11 +5530,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &6489065382487074932 stripped
@@ -5565,6 +5545,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (34)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5635,11 +5620,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (34)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241673372333 stripped
@@ -5655,6 +5635,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (9)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5725,11 +5710,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (9)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}
 --- !u!4 &155506241631186273 stripped
@@ -5745,6 +5725,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8803324159020861585}
     m_Modifications:
+    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
+        type: 3}
+      propertyPath: m_Name
+      value: Red Cube (14)
+      objectReference: {fileID: 0}
     - target: {fileID: 8647976385683245570, guid: 8f7377ad57ec8ee45858c72d51ddb784,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5814,11 +5799,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8647976385683245575, guid: 8f7377ad57ec8ee45858c72d51ddb784,
-        type: 3}
-      propertyPath: m_Name
-      value: Red Cube (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7377ad57ec8ee45858c72d51ddb784, type: 3}

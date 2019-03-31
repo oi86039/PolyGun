@@ -21,7 +21,7 @@ public class gun : MonoBehaviour
     public float QuitTimeLimit;
     public Text Quit;
 
-    private Rigidbody hotBod;
+    public Rigidbody hotBod;
     public GameObject lazur;
     public Transform spawnPos;
     public Text AmmoText;
@@ -45,7 +45,7 @@ public class gun : MonoBehaviour
     bool isReloading;
     public int ammo;
     public int reserve; //Reload into ammo when ammo = 0;
-    float EmptyTimer; 
+    float EmptyTimer;
     public float EmptyTimeLimit;//Time till ammo recharge
     int FullAmmo;
     int FullReserve;
@@ -60,6 +60,9 @@ public class gun : MonoBehaviour
     {
         player = GameObject.Find("LocalAvatarWithGrab");
         PistolOffset = GameObject.Find("PistolOffset").transform;
+        LeftGrabber = GameObject.Find("AvatarGrabberLeft").GetComponent<OVRGrabber>();
+        RightGrabber = GameObject.Find("AvatarGrabberRight").GetComponent<OVRGrabber>();
+
 
         FullAmmo = ammo;
         FullReserve = reserve;
@@ -67,7 +70,7 @@ public class gun : MonoBehaviour
         ModeIndicator.text = "Pistol";
         audioIndex = 0;
         UpdateAmmo();
-        hotBod = GetComponent<Rigidbody>();
+        //hotBod = GetComponent<Rigidbody>();
         sound = GetComponent<AudioSource>();
         shootSpark = GetComponent<ParticleSystem>();
         originalPos = transform.position;
@@ -237,14 +240,15 @@ public class gun : MonoBehaviour
         if (ammo == 0 && reserve == 0)
         {
             EmptyTimer += Time.deltaTime;
-            SceneManager.LoadScene("Game Over");
-            }
-        
+            if (EmptyTimer >= EmptyTimeLimit)
+                SceneManager.LoadScene("Game Over");
+        }
+
         //Check state
         if (grabbable.isGrabbed)
         {
             //Reloading
-           // if (ReloadInput && ammo <= 0 && reserve > 0)
+            // if (ReloadInput && ammo <= 0 && reserve > 0)
             if (ReloadInput && ammo < FullAmmo && reserve > 0)
             { //Can reload
                 isReloading = true;
@@ -260,7 +264,8 @@ public class gun : MonoBehaviour
                         reserve -= FullAmmo - ammo;
                         ammo += FullAmmo - ammo;
                     }
-                    else {
+                    else
+                    {
                         ammo += reserve;
                         reserve = 0;
                     }
@@ -360,7 +365,7 @@ public class gun : MonoBehaviour
             AmmoText.color = Color.red;
             if (flag == 1)
             {
-                AmmoText.text = "END\n" + (EmptyTimeLimit-EmptyTimer).ToString("F0");
+                AmmoText.text = "END\n" + (EmptyTimeLimit - EmptyTimer).ToString("F0");
                 StartCoroutine(Vibration(0.2f, 0.15f, 0.1f));
             }
             else if (flag == 2)

@@ -135,7 +135,6 @@ MonoBehaviour:
   gunPos: {x: 0, y: 0, z: 0}
   gunRot: {x: 0, y: 0, z: 0, w: 0}
   offset: {x: 0, y: 0, z: 0}
-  manager: {fileID: 0}
   hotBod: {fileID: 54852398236166432}
   grabbable: {fileID: 114023050491058352}
   current: 0
