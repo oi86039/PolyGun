@@ -13,8 +13,12 @@ TagManager:
   - tCube
   - pixel
   - player
+<<<<<<< HEAD
   - pickUpHealth
   - pickUpAmmo
+=======
+  - evilLaser
+>>>>>>> 90f8e06c172867ce2bae63b00a5b70c074bbf618
   layers:
   - Default
   - TransparentFX

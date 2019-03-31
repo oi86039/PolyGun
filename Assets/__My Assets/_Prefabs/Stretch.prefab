@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5917967319336981464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.31413168, y: 1.6532029, z: 3.3155735}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15665, y: 0.15665, z: 0.15665}
   m_Children:
   - {fileID: 3794839989222630119}
   - {fileID: 3794839989939485268}
@@ -471,11 +471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube
-      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -546,6 +541,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
 --- !u!4 &8216445712421414585 stripped
@@ -561,11 +561,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -635,6 +630,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
@@ -2001,11 +2001,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Orange Cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 7388486353709700061, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2075,6 +2070,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Orange Cube (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8, type: 3}
@@ -2901,11 +2901,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Orange Cube (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 7388486353709700061, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2975,6 +2970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Orange Cube (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8, type: 3}
@@ -3711,11 +3711,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3785,6 +3780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}
@@ -4971,11 +4971,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Orange Cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7388486353709700061, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5045,6 +5040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Orange Cube (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8, type: 3}
@@ -5331,11 +5331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
-        type: 3}
-      propertyPath: m_Name
-      value: Orange Cube
-      objectReference: {fileID: 0}
     - target: {fileID: 7388486353709700061, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5405,6 +5400,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388486353709700056, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8,
+        type: 3}
+      propertyPath: m_Name
+      value: Orange Cube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ba68f8a5d275ba499a0bd3bd2799aa8, type: 3}
@@ -6141,11 +6141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5917967319336981465}
     m_Modifications:
-    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
-        type: 3}
-      propertyPath: m_Name
-      value: Black Cube (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2316673455390582120, guid: c253873c94631ba48af8d75b399346a7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6215,6 +6210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316673455390582135, guid: c253873c94631ba48af8d75b399346a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Black Cube (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c253873c94631ba48af8d75b399346a7, type: 3}

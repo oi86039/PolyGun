@@ -37,7 +37,7 @@ public class Player_Health : MonoBehaviour
         if (health <= 0)
             //Fade
             //Load Game over
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
     }
 
 

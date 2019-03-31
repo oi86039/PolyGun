@@ -114,7 +114,10 @@ public class teleport : MonoBehaviour
             if (SceneTimer >= SceneTimeLimit)
             {
                 Debug.Log("sce");
-                SceneManager.LoadScene(1);
+                if (SceneManager.GetActiveScene().buildIndex == 1) //Main Level
+                    SceneManager.LoadScene(2); //Load Win Screen
+                else
+                    SceneManager.LoadScene(1); //Load Win Screen
             }
         }
 
