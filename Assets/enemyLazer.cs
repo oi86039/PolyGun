@@ -37,7 +37,6 @@ public class enemyLazer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            player.GetComponent<Player_Health>().health -= damage;
             Destroy(gameObject);
         }
     }

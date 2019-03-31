@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health: 30/30'
+  m_Text: 0
 --- !u!1 &1217700713052784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5888,6 +5888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98230d4e0ceb1747b2768a92645d4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   timeLimit: 6
   ReloadTimeLimit: 2.5
   PistolOffset: {fileID: 0}

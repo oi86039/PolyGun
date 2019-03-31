@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lazur : MonoBehaviour {
+public class lazur : MonoBehaviour
+{
 
     private Rigidbody hotBod;
     public float speed;
@@ -10,18 +11,20 @@ public class lazur : MonoBehaviour {
     public float timeLimit;
     public GameObject player;
     public GameObject gun;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         hotBod = GetComponent<Rigidbody>();
         hotBod.AddForce(transform.up * speed, ForceMode.Impulse);
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         timer += Time.deltaTime;
         if (timer >= timeLimit) Destroy(gameObject);
-	}
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,24 +34,27 @@ public class lazur : MonoBehaviour {
         else if (collision.gameObject.CompareTag("pixel"))
         {
             collision.gameObject.GetComponent<pixel>().health--;
+            float chance = Random.Range(0, 1);
+            if (chance >= .99f) //Ammo
+                gun.GetComponent<gun>().reserve += 15;
         }
-        else if (collision.gameObject.CompareTag("pickUpHealth"))
-        {
-            player.GetComponent<Player_Health>().health += 5;
-            Destroy(collision.gameObject);
-        }
-        else if (collision.gameObject.CompareTag("pickUpAmmo"))
-        {
-            player.GetComponent<gun>().reserve += 5;
-            if (player.GetComponent<gun>().reserve > 90)
-            {
-                player.GetComponent<gun>().reserve = 90;
-            }
-        }
+        //else if (collision.gameObject.CompareTag("pickUpHealth"))
+        //{
+        //    player.GetComponent<Player_Health>().health += 5;
+        //    Destroy(collision.gameObject);
+        //}
+        //else if (collision.gameObject.CompareTag("pickUpAmmo"))
+        //{
+        //    player.GetComponent<gun>().reserve += 5;
+        //    if (player.GetComponent<gun>().reserve > 90)
+        //    {
+        //        player.GetComponent<gun>().reserve = 90;
+        //    }
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
     }
 }

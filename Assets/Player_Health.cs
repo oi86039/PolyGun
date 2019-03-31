@@ -41,9 +41,11 @@ public class Player_Health : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //If enemy projectile (each tag does different damage)
-        //if (other.gameObject.CompareTag("")) { }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    //If enemy projectile (each tag does different damage)
+    //    if (other.gameObject.CompareTag("evilLaser")) {
+            
+    //    }
+    //}
 }

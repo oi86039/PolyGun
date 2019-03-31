@@ -17,7 +17,7 @@ public class pixel_enemy : MonoBehaviour
 
     public float distThreshold;
     public GameObject Player;
-    public GameObject evil_projectile;
+    //public GameObject evil_projectile;
     float timer;
     public float TimeLimit;
 
@@ -67,14 +67,15 @@ public class pixel_enemy : MonoBehaviour
         {
             case enemyID.SPUNK:
                 transform.RotateAround(Player.transform.position,Vector3.up, horizontalSpeed); //Rotates Around Player
+                
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit) {
                     //TimeLimit += Random.Range(-0.001, 0.1);
                     horizontalSpeed *= -1;
                     //Shoot
-                    GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0,0,0,0) );
-                    instance.GetComponent<enemyLazer>().damage = damage;
-                    instance.GetComponent<enemyLazer>().player = Player;
+                    //GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0,0,0,0) );
+                    //instance.GetComponent<enemyLazer>().damage = damage;
+                    //instance.GetComponent<enemyLazer>().player = Player;
                     timer = 0;
                 }
                 break;
@@ -89,9 +90,9 @@ public class pixel_enemy : MonoBehaviour
                    // TimeLimit += Random.Range(-1, 1);
                     horizontalSpeed *= -1;
                     //Shoot
-                    GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0, 0, 0, 0));
-                    instance.GetComponent<enemyLazer>().damage = damage;
-                    instance.GetComponent<enemyLazer>().player = Player;
+                    //GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0, 0, 0, 0));
+                    //instance.GetComponent<enemyLazer>().damage = damage;
+                    //instance.GetComponent<enemyLazer>().player = Player;
                     timer = 0;
                 }
                 transform.position = Vector3.MoveTowards(transform.position, Player.transform.position, -verticalSpeed);
@@ -128,8 +129,4 @@ public class pixel_enemy : MonoBehaviour
     }
 }
 
-// private void OnCollisionEnter(Collision collision)
-//{
-//   Debug.Log("Yes is");
-//}
-//}
+

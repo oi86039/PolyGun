@@ -47,6 +47,9 @@ public class gun : MonoBehaviour
     public int reserve; //Reload into ammo when ammo = 0;
     float EmptyTimer; 
     public float EmptyTimeLimit;//Time till ammo recharge
+    int FullAmmo;
+    int FullReserve;
+
 
     private AudioSource sound;
     public AudioClip[] audios;
@@ -55,6 +58,11 @@ public class gun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        player = GameObject.Find("LocalAvatarWithGrab");
+        PistolOffset = GameObject.Find("PistolOffset").transform;
+
+        FullAmmo = ammo;
+        FullReserve = reserve;
         firemode = FIRE_MODE.PISTOL;
         ModeIndicator.text = "Pistol";
         audioIndex = 0;
@@ -178,7 +186,6 @@ public class gun : MonoBehaviour
             case (FIRE_MODE.PISTOL):
                 firing = true;
                 GameObject instance = Instantiate(lazur, spawnPos.position, spawnPos.rotation);
-                instance.GetComponent<lazur>().player = player;
                 instance.GetComponent<lazur>().gun = gameObject;
                 //Play particle effect
                 shootSpark.Play();
@@ -230,18 +237,15 @@ public class gun : MonoBehaviour
         if (ammo == 0 && reserve == 0)
         {
             EmptyTimer += Time.deltaTime;
-            if (EmptyTimer >= EmptyTimeLimit) {
-                ammo = 30; reserve = 90;
-                EmptyTimer = 0;
+            SceneManager.LoadScene("Game Over");
             }
-        }
-
+        
         //Check state
         if (grabbable.isGrabbed)
         {
             //Reloading
            // if (ReloadInput && ammo <= 0 && reserve > 0)
-            if (ReloadInput && ammo < 30 && reserve > 0)
+            if (ReloadInput && ammo < FullAmmo && reserve > 0)
             { //Can reload
                 isReloading = true;
                 ReloadTimer += Time.deltaTime;
@@ -251,10 +255,10 @@ public class gun : MonoBehaviour
                 {
                     //if (reserve >= 30) { ammo = 30; reserve -= 30; }
                     // else { ammo = reserve; reserve = 0; }
-                    if (reserve >= 30 - ammo)
+                    if (reserve >= FullAmmo - ammo)
                     {
-                        reserve -= 30 - ammo;
-                        ammo += 30 - ammo;
+                        reserve -= FullAmmo - ammo;
+                        ammo += FullAmmo - ammo;
                     }
                     else {
                         ammo += reserve;
@@ -299,7 +303,8 @@ public class gun : MonoBehaviour
         {
             if (ammo > 0)
             {
-                Instantiate(lazur, spawnPos.position, spawnPos.rotation);
+                GameObject instance = Instantiate(lazur, spawnPos.position, spawnPos.rotation);
+                instance.GetComponent<lazur>().gun = gameObject;
                 //Play particle effect
                 shootSpark.Play();
                 //Play lazr sound
@@ -320,11 +325,11 @@ public class gun : MonoBehaviour
         if (ammo > 0)
         {
             ReloadIndicator.SetActive(false);
-            if (ammo == 30) //Full 
+            if (ammo == FullAmmo) //Full 
                 AmmoText.color = Color.green;
             else if (ammo > 6) //Normal
                 AmmoText.color = new Color(.29f, 2.24f, 2.26f); //Standary Cyan Blue
-            else
+            else //Warning
                 AmmoText.color = Color.yellow;
             if (flag == 1)
                 AmmoText.text = ammo + "\n" + reserve;
@@ -355,7 +360,7 @@ public class gun : MonoBehaviour
             AmmoText.color = Color.red;
             if (flag == 1)
             {
-                AmmoText.text = "N/A\n" + (EmptyTimeLimit-EmptyTimer).ToString("F0");
+                AmmoText.text = "END\n" + (EmptyTimeLimit-EmptyTimer).ToString("F0");
                 StartCoroutine(Vibration(0.2f, 0.15f, 0.1f));
             }
             else if (flag == 2)
