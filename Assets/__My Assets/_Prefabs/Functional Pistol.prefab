@@ -5908,8 +5908,9 @@ MonoBehaviour:
   firemode: 0
   fireRate: 800
   firing: 0
-  PistolAmmo: 30
+  ammo: 30
   reserve: 90
+  EmptyTimeLimit: 30
   audios:
   - {fileID: 8300000, guid: 95e838e0a30c748cb9d08f70fd02e578, type: 3}
   - {fileID: 8300000, guid: 3c1de4fe05be44abe9dfc42da59d5269, type: 3}

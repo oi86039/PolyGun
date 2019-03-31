@@ -61,8 +61,6 @@ public class teleport : MonoBehaviour
         //else if not grabbed
         else
         {
-            Vector3.Scale(hotBod.velocity, new Vector3 (50, 50, 50));
-
             if (transform.position != cubePos) //If Cube isn't in original position, move it while keeping teleporters on
             {
                 timer += Time.deltaTime;

@@ -41,8 +41,10 @@ public class gun : MonoBehaviour
     public float fireRate;
     public bool firing; //Is the gun firing right now?
     bool isReloading;
-    public int PistolAmmo;
-    public int reserve; //Reload into PistolAmmo when PistolAmmo = 0;
+    public int ammo;
+    public int reserve; //Reload into ammo when ammo = 0;
+    float EmptyTimer; 
+    public float EmptyTimeLimit;//Time till ammo recharge
 
     private AudioSource sound;
     public AudioClip[] audios;
@@ -133,7 +135,7 @@ public class gun : MonoBehaviour
             //if we press trigger
             if (TriggerInput)
             {
-                if (PistolAmmo >= 1)
+                if (ammo >= 1)
                     Fire();
                 else if (!sound.isPlaying)
                 {
@@ -181,7 +183,7 @@ public class gun : MonoBehaviour
                 sound.Play();
                 audioIndex = Random.Range(0, 8); //Randomly select next sound
                 StartCoroutine(Vibration(1, 30, 0.1f));
-                PistolAmmo--;
+                ammo--;
                 firing = false;
                 break;
             case (FIRE_MODE.AUTO):
@@ -221,11 +223,21 @@ public class gun : MonoBehaviour
 
     void UpdateAmmo()
     {
+        if (ammo == 0 && reserve == 0)
+        {
+            EmptyTimer += Time.deltaTime;
+            if (EmptyTimer >= EmptyTimeLimit) {
+                ammo = 30; reserve = 90;
+                EmptyTimer = 0;
+            }
+        }
+
         //Check state
         if (grabbable.isGrabbed)
         {
             //Reloading
-            if (ReloadInput && PistolAmmo <= 0 && reserve > 0)
+           // if (ReloadInput && ammo <= 0 && reserve > 0)
+            if (ReloadInput && ammo < 30 && reserve > 0)
             { //Can reload
                 isReloading = true;
                 ReloadTimer += Time.deltaTime;
@@ -233,8 +245,17 @@ public class gun : MonoBehaviour
                 AmmoText.text = "---\n" + (ReloadTimeLimit - ReloadTimer).ToString("F2");
                 if (ReloadTimer >= ReloadTimeLimit)
                 {
-                    if (reserve >= 30) { PistolAmmo = 30; reserve -= 30; }
-                    else { PistolAmmo = reserve; reserve = 0; }
+                    //if (reserve >= 30) { ammo = 30; reserve -= 30; }
+                    // else { ammo = reserve; reserve = 0; }
+                    if (reserve >= 30 - ammo)
+                    {
+                        reserve -= 30 - ammo;
+                        ammo += 30 - ammo;
+                    }
+                    else {
+                        ammo += reserve;
+                        reserve = 0;
+                    }
                     ReloadTimer = 0.0f;
                     StartCoroutine(Vibration(0.2f, 0.5f, 0.1f));
                 }
@@ -272,7 +293,7 @@ public class gun : MonoBehaviour
         firing = true;
         for (int i = 0; i < 3; i++)
         {
-            if (PistolAmmo > 0)
+            if (ammo > 0)
             {
                 Instantiate(lazur, spawnPos.position, spawnPos.rotation);
                 //Play particle effect
@@ -282,7 +303,7 @@ public class gun : MonoBehaviour
                 sound.Play();
                 audioIndex = Random.Range(0, 8); //Randomly select next sound
                 StartCoroutine(Vibration(1, 30, 0.1f));
-                PistolAmmo--;
+                ammo--;
             }
             yield return new WaitForSeconds(bulletDelay); // wait till the next round
         }
@@ -291,22 +312,22 @@ public class gun : MonoBehaviour
 
     void CheckAmmoColor(int flag)
     { //Flag - 1 = Held, 2 = Floating, 3 = Reset to original position
-        //Check PistolAmmo
-        if (PistolAmmo > 0)
+        //Check ammo
+        if (ammo > 0)
         {
             ReloadIndicator.SetActive(false);
-            if (PistolAmmo == 30) //Full 
+            if (ammo == 30) //Full 
                 AmmoText.color = Color.green;
-            else if (PistolAmmo > 6) //Normal
+            else if (ammo > 6) //Normal
                 AmmoText.color = new Color(.29f, 2.24f, 2.26f); //Standary Cyan Blue
             else
                 AmmoText.color = Color.yellow;
             if (flag == 1)
-                AmmoText.text = PistolAmmo + "\n" + reserve;
+                AmmoText.text = ammo + "\n" + reserve;
             else if (flag == 2)
-                AmmoText.text = "---" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
+                AmmoText.text = "--" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
             else if (flag == 3)
-                AmmoText.text = "---\n";
+                AmmoText.text = "--\n";
         }
 
         else if (reserve > 0) //Reloadable
@@ -319,9 +340,9 @@ public class gun : MonoBehaviour
                 if (!isReloading) StartCoroutine(Vibration(0.2f, 0.3f, 0.1f));
             }
             else if (flag == 2)
-                AmmoText.text = "---" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
+                AmmoText.text = "--" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
             else if (flag == 3)
-                AmmoText.text = "---\n";
+                AmmoText.text = "--\n";
         }
 
         else //Empty
@@ -330,13 +351,13 @@ public class gun : MonoBehaviour
             AmmoText.color = Color.red;
             if (flag == 1)
             {
-                AmmoText.text = "Empty";
+                AmmoText.text = "N/A\n" + (EmptyTimeLimit-EmptyTimer).ToString("F0");
                 StartCoroutine(Vibration(0.2f, 0.15f, 0.1f));
             }
             else if (flag == 2)
-                AmmoText.text = "---" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
+                AmmoText.text = "--" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
             else if (flag == 3)
-                AmmoText.text = "---\n";
+                AmmoText.text = "--\n";
 
         }
     }
