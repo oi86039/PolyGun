@@ -11,7 +11,7 @@ public class Teleport_Manager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        teleporters = GameObject.FindGameObjectsWithTag("teleporter");
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class Teleport_Manager : MonoBehaviour
               //  if (teleporters[i] == teleporters[currentTeleport])
                //     continue;
             //}
-            teleporters[i].transform.parent.gameObject.SetActive(true);
+            teleporters[i].gameObject.SetActive(true);
             Debug.Log("Ran");
         }
     }
@@ -41,12 +41,12 @@ public class Teleport_Manager : MonoBehaviour
 
         for (int i = 0; i < teleporters.Length; i++)
         {
-            if (current > teleporters.Length + 1)
-            {
-                if (teleporters[i] == teleporters[currentTeleport])
-                    continue;
-            }
-            teleporters[i].transform.parent.gameObject.SetActive(false);
+            //if (current > teleporters.Length + 1)
+            //{
+               // if (teleporters[i] == teleporters[currentTeleport])
+                //    continue;
+           // }
+            teleporters[i].gameObject.SetActive(false);
             Debug.Log("Ran");
         }
     }

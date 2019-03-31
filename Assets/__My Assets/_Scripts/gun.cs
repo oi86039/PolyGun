@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum FIRE_MODE { PISTOL, BURST, AUTO };
 
@@ -14,6 +15,9 @@ public class gun : MonoBehaviour
 
     public Transform PistolOffset;
     public bool leftHandedMode;
+    float QuitTimer;
+    public float QuitTimeLimit;
+    public Text Quit;
 
     private Rigidbody hotBod;
     public GameObject lazur;
@@ -66,6 +70,22 @@ public class gun : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick)) //Toggle Left Handed Mode
         {
             LeftHandedModeToggle();
+        }
+
+        if (OVRInput.Get(OVRInput.Button.Start))// && SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 0) //Quit to main menu
+        {
+            QuitTimer += Time.deltaTime;
+            Quit.gameObject.transform.parent.gameObject.SetActive(true);
+            Quit.text = "Quitting to Main Menu\n---\n" + (QuitTimeLimit - QuitTimer).ToString("F4");
+            if (QuitTimer >= QuitTimeLimit)
+            {
+                SceneManager.LoadScene(0);
+            }
+        }
+        else
+        {
+            QuitTimer = 0;
+            Quit.gameObject.transform.parent.gameObject.SetActive(false);
         }
 
         //If we grab 
@@ -134,7 +154,7 @@ public class gun : MonoBehaviour
             //Respawn Gun
             if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick))
             {
-                timer = timeLimit+5;
+                timer = timeLimit + 5;
             }
 
             //Move gun back to center
@@ -252,15 +272,18 @@ public class gun : MonoBehaviour
         firing = true;
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(lazur, spawnPos.position, spawnPos.rotation);
-            //Play particle effect
-            shootSpark.Play();
-            //Play lazr sound
-            sound.clip = audios[audioIndex];
-            sound.Play();
-            audioIndex = Random.Range(0, 8); //Randomly select next sound
-            StartCoroutine(Vibration(1, 30, 0.1f));
-            PistolAmmo--;
+            if (PistolAmmo > 0)
+            {
+                Instantiate(lazur, spawnPos.position, spawnPos.rotation);
+                //Play particle effect
+                shootSpark.Play();
+                //Play lazr sound
+                sound.clip = audios[audioIndex];
+                sound.Play();
+                audioIndex = Random.Range(0, 8); //Randomly select next sound
+                StartCoroutine(Vibration(1, 30, 0.1f));
+                PistolAmmo--;
+            }
             yield return new WaitForSeconds(bulletDelay); // wait till the next round
         }
         firing = false;

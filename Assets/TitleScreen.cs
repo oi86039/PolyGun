@@ -23,7 +23,7 @@ public class TitleScreen : MonoBehaviour
     void Update()
     {
         if (teleporter.position != button.position && play)
-            teleporter.position = Vector3.MoveTowards(teleporter.position, buttonLocation, 0.1f);
+            teleporter.position = Vector3.MoveTowards(teleporter.position, buttonLocation, 0.05f);
     }
 
     private void OnCollisionEnter(Collision collision)

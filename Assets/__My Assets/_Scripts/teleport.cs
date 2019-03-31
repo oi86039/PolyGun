@@ -16,25 +16,29 @@ public class teleport : MonoBehaviour
     public Vector3 gunPos; //Where Pistol will spawn
     public Quaternion gunRot; //Where Pistol will spawn
     public Vector3 offset;
-    public Teleport_Manager manager;
+    //public Teleport_Manager manager;
     public Rigidbody hotBod;
     public OVRGrabbable grabbable;
+
     public int current; //Current teleporter
 
     bool moveToTeleport;
 
     public float timer;
     public float timeLimit = 2;
+    bool scaled; //True if velocity has been scaled
 
     float SceneTimer;
     public float SceneTimeLimit;
     bool special; //if hit special teleporter
 
+    public OVRScreenFade fade;
+
     // Use this for initialization
     void Start()
     {
         hotBod.constraints = RigidbodyConstraints.FreezeAll;
-        current = manager.teleporters.Length + 1;
+        //current = manager.teleporters.Length + 1;
         cubePos = transform.position;
         cubeRot = transform.rotation;
         gunPos = gun.transform.position;
@@ -49,13 +53,16 @@ public class teleport : MonoBehaviour
         if (grabbable.isGrabbed)
         {
             hotBod.constraints = RigidbodyConstraints.None;
-            manager.TurnOn(current);
+           // manager.TurnOn(current);
             timer = 0.0f;
             //Show all teleporters in world.
+           // manager.TurnOn(9);
         }
         //else if not grabbed
         else
         {
+            Vector3.Scale(hotBod.velocity, new Vector3 (50, 50, 50));
+
             if (transform.position != cubePos) //If Cube isn't in original position, move it while keeping teleporters on
             {
                 timer += Time.deltaTime;
@@ -70,6 +77,7 @@ public class teleport : MonoBehaviour
             {
                 hotBod.constraints = RigidbodyConstraints.FreezePosition;
                 timer = 0;
+               // manager.TurnOff(9);
             }//Turn off teleporters
         }
 
@@ -82,13 +90,13 @@ public class teleport : MonoBehaviour
                 moveToTeleport = false;
         }
 
-        if (special)
+        if (special) //If menu teleporter is activated
         {
             SceneTimer += Time.deltaTime;
             if (SceneTimer >= SceneTimeLimit)
             {
                 Debug.Log("sce");
-                SceneManager.LoadScene("Test Level");
+                SceneManager.LoadScene(1);
             }
         }
 
@@ -100,8 +108,8 @@ public class teleport : MonoBehaviour
             spawnPos = other.gameObject.transform.parent.Find("spawnPos").gameObject; //Replace current spawnPos with touched one.
             gunPos = other.gameObject.transform.parent.Find("GunPos").gameObject.transform.position; //Replace current spawnPos with touched one.
             cubePos = other.gameObject.transform.parent.Find("CubePos").gameObject.transform.position; //Replace current spawnPos with touched one.;
-            //Play teleport fx
-             moveToTeleport = true;
+                                                                                                       //Play teleport fx
+            moveToTeleport = true;
             gun.position = gunPos;
             gun.rotation = gunRot;
             transform.position = cubePos;
@@ -110,7 +118,10 @@ public class teleport : MonoBehaviour
             gun.gameObject.GetComponent<gun>().originalPos = gunPos;
             gun.gameObject.GetComponent<gun>().originalRot = gunRot;
 
-            if (other.gameObject.CompareTag("teleporter_special")) special = true;
+            if (other.gameObject.CompareTag("teleporter_special")) {
+                special = true;
+                fade.FadeOut();
+            }
             //other.gameObject.transform.parent.gameObject.SetActive(false); //Set teleporter = false
         }
     }
@@ -122,4 +133,5 @@ public class teleport : MonoBehaviour
             hotBod.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;
         }
     }
+
 }

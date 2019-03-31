@@ -26,10 +26,15 @@ public class lazur : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("gun"))
         Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+        //if contacted with enemies, spawn explosion fx and destroy projectile
+        else if (collision.gameObject.CompareTag("pixel"))
+        {
+            collision.gameObject.GetComponent<pixel>().health--;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //if contacted with enemies, spawn explosion fx and destroy projectile
+        
     }
 }

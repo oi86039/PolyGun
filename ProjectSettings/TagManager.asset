@@ -11,6 +11,8 @@ TagManager:
   - Quit
   - teleporter_special
   - tCube
+  - pixel
+  - player
   layers:
   - Default
   - TransparentFX
