@@ -8,6 +8,8 @@ public enum FIRE_MODE { PISTOL, BURST, AUTO };
 
 public class gun : MonoBehaviour
 {
+    public GameObject player;
+
     float timer; //Respawn timer
     public float timeLimit; //Time before respawn
     float ReloadTimer; //Reload timer
@@ -175,7 +177,9 @@ public class gun : MonoBehaviour
         {
             case (FIRE_MODE.PISTOL):
                 firing = true;
-                Instantiate(lazur, spawnPos.position, spawnPos.rotation);
+                GameObject instance = Instantiate(lazur, spawnPos.position, spawnPos.rotation);
+                instance.GetComponent<lazur>().player = player;
+                instance.GetComponent<lazur>().gun = gameObject;
                 //Play particle effect
                 shootSpark.Play();
                 //Play lazr sound

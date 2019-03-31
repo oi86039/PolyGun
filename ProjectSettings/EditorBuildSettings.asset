@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/__My Assets/_Scenes/Title.unity
+    path: Assets/__My Assets/_Prefabs/_Scenes/Title.unity
     guid: 0ebd0b7995a35914fb85bec91fb1b534
   - enabled: 0
-    path: Assets/__My Assets/_Scenes/Test Level.unity
+    path: Assets/__My Assets/_Prefabs/_Scenes/Test Level.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Mehvish/Assets/Landscape2.unity
     guid: 7516be06580a07d42a5056153220cead
   - enabled: 1
-    path: Assets/__My Assets/_Scenes/Game Over.unity
+    path: Assets/__My Assets/_Prefabs/_Scenes/Game Over.unity
     guid: 345fa4e64b273ce4f9ac1d4b175c8eb4
   m_configObjects: {}

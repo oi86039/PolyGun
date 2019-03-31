@@ -13,6 +13,8 @@ TagManager:
   - tCube
   - pixel
   - player
+  - pickUpHealth
+  - pickUpAmmo
   layers:
   - Default
   - TransparentFX

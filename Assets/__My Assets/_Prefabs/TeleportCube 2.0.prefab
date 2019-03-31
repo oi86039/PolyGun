@@ -131,6 +131,7 @@ MonoBehaviour:
   spawnPos: {fileID: 0}
   cubePos: {x: 0, y: 0, z: 0}
   cubeRot: {x: 0, y: 0, z: 0, w: 0}
+  cubeScale: {x: 0, y: 0, z: 0}
   gunPos: {x: 0, y: 0, z: 0}
   gunRot: {x: 0, y: 0, z: 0, w: 0}
   offset: {x: 0, y: 0, z: 0}
@@ -139,7 +140,7 @@ MonoBehaviour:
   grabbable: {fileID: 114023050491058352}
   current: 0
   timer: 0
-  timeLimit: 2
+  timeLimit: 3
   SceneTimeLimit: 0
   fade: {fileID: 0}
 --- !u!114 &114023050491058352

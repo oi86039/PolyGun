@@ -13,10 +13,11 @@ public class teleport : MonoBehaviour
     public GameObject spawnPos; //Where player will spawn
     public Vector3 cubePos; //Where cube will spawn
     public Quaternion cubeRot; //Where cube will spawn
+    public Vector3 cubeScale; //Where cube will spawn
     public Vector3 gunPos; //Where Pistol will spawn
     public Quaternion gunRot; //Where Pistol will spawn
     public Vector3 offset;
-    //public Teleport_Manager manager;
+   // public Teleport_Manager manager;
     public Rigidbody hotBod;
     public OVRGrabbable grabbable;
 
@@ -38,9 +39,10 @@ public class teleport : MonoBehaviour
     void Start()
     {
         hotBod.constraints = RigidbodyConstraints.FreezeAll;
-        //current = manager.teleporters.Length + 1;
+       // current = manager.teleporters.Length + 1;
         cubePos = transform.position;
         cubeRot = transform.rotation;
+        cubeScale = transform.localScale;
         gunPos = gun.transform.position;
         gunRot = gun.transform.rotation;
         hotBod = GetComponent<Rigidbody>();
@@ -52,20 +54,24 @@ public class teleport : MonoBehaviour
     {
         if (grabbable.isGrabbed)
         {
+            transform.localScale = cubeScale;
             hotBod.constraints = RigidbodyConstraints.None;
-           // manager.TurnOn(current);
+            //manager.TurnOn(current);
             timer = 0.0f;
             //Show all teleporters in world.
-           // manager.TurnOn(9);
+            //manager.TurnOn(9);
         }
         //else if not grabbed
         else
         {
             if (transform.position != cubePos) //If Cube isn't in original position, move it while keeping teleporters on
             {
+                transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+                //Maybe change color too
                 timer += Time.deltaTime;
                 if (timer >= timeLimit)
                 {
+                    transform.localScale = Vector3.MoveTowards(transform.localScale, cubeScale, 0.01f);
                     hotBod.velocity = Vector3.zero;
                     transform.position = Vector3.MoveTowards(transform.position, cubePos, speed); //Move to original position
                     //transform.rotation = cubeRot;
@@ -73,6 +79,7 @@ public class teleport : MonoBehaviour
             }
             else
             {
+                transform.localScale = cubeScale;
                 hotBod.constraints = RigidbodyConstraints.FreezePosition;
                 timer = 0;
                // manager.TurnOff(9);
@@ -82,9 +89,22 @@ public class teleport : MonoBehaviour
         if (moveToTeleport) { //Teleport player slowly
             if (player.transform.position != spawnPos.transform.position) { 
                 player.transform.position = Vector3.MoveTowards(player.transform.position, spawnPos.transform.position, 0.13f);
-                //Play sound
+                                //Play sound
             }
-            else
+            if (!gun.GetComponent<OVRGrabbable>().isGrabbed) //Teleport Gun
+            {
+                if (gun.position != gunPos)
+                {
+                    gun.position = Vector3.MoveTowards(gun.position, gunPos, 0.13f);
+                    gun.rotation = gunRot;                                //Play sound
+                }
+            }
+            if (transform.position != cubePos) {
+                transform.position = Vector3.MoveTowards(transform.position, cubePos, 0.13f);
+                transform.rotation = cubeRot;                                //Play sound
+            }
+            
+            if (player.transform.position == spawnPos.transform.position)
                 moveToTeleport = false;
         }
 
@@ -108,9 +128,6 @@ public class teleport : MonoBehaviour
             cubePos = other.gameObject.transform.parent.Find("CubePos").gameObject.transform.position; //Replace current spawnPos with touched one.;
                                                                                                        //Play teleport fx
             moveToTeleport = true;
-            gun.position = gunPos;
-            gun.rotation = gunRot;
-            transform.position = cubePos;
             hotBod.constraints = RigidbodyConstraints.FreezeAll;
             gun.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             gun.gameObject.GetComponent<gun>().originalPos = gunPos;
