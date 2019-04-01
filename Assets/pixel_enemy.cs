@@ -62,8 +62,10 @@ public class pixel_enemy : MonoBehaviour
                 child.gameObject.GetComponent<pixel>().health = 0;
         }
         if (transform.childCount <= 0)
+        {
             gun.GetComponent<gun>().score += 90;            //Explode
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     void Chase(enemyID id) //Actual enemy Update method
