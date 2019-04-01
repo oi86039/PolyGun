@@ -48,12 +48,14 @@ public class teleport : MonoBehaviour
         gunPos = gun.transform.position;
         gunRot = gun.transform.rotation;
         hotBod = GetComponent<Rigidbody>();
+        fade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
        // grabbable = GetComponent<OVRGrabbable>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (grabbable.isGrabbed)
         {
             transform.localScale = cubeScale;
@@ -71,6 +73,9 @@ public class teleport : MonoBehaviour
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
                 //Maybe change color too
                 timer += Time.deltaTime;
+
+                if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick)) timer = timeLimit+1;
+
                 if (timer >= timeLimit)
                 {
                     transform.localScale = Vector3.MoveTowards(transform.localScale, cubeScale, 0.01f);

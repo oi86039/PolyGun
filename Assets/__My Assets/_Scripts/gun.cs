@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -50,6 +51,8 @@ public class gun : MonoBehaviour
     int FullAmmo;
     int FullReserve;
 
+    public int score;
+    public Text scoreText;
 
     private AudioSource sound;
     public AudioClip[] audios;
@@ -63,6 +66,7 @@ public class gun : MonoBehaviour
         LeftGrabber = GameObject.Find("AvatarGrabberLeft").GetComponent<OVRGrabber>();
         RightGrabber = GameObject.Find("AvatarGrabberRight").GetComponent<OVRGrabber>();
 
+        score = 0;
 
         FullAmmo = ammo;
         FullReserve = reserve;
@@ -80,6 +84,7 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scoreText.text = "" + "Score:" + score.ToString("000000");
         UpdateAmmo(); //Update Ammo count and UI display
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryThumbstick)) //Toggle Left Handed Mode
@@ -167,10 +172,6 @@ public class gun : MonoBehaviour
             //If not grabbing
             timer += Time.deltaTime;
             //Respawn Gun
-            if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick))
-            {
-                timer = timeLimit + 5;
-            }
 
             //Move gun back to center
             if (timer >= timeLimit)

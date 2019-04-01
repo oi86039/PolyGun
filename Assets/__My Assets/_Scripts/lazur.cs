@@ -33,6 +33,7 @@ public class lazur : MonoBehaviour
         //if contacted with enemies, spawn explosion fx and destroy projectile
         else if (collision.gameObject.CompareTag("pixel"))
         {
+            gun.GetComponent<gun>().score += 10;
             collision.gameObject.GetComponent<pixel>().health--;
             float chance = Random.Range(0, 1);
             if (chance >= .99f) //Ammo

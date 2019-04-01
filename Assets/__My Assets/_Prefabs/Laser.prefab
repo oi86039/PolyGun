@@ -127,6 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   timeLimit: 0.8
+  player: {fileID: 0}
+  gun: {fileID: 0}
 --- !u!199 &199442842097618510
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -6231,7 +6231,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fade
       value: 
-      objectReference: {fileID: 1957316668}
+      objectReference: {fileID: 0}
     - target: {fileID: 7293219864210786319, guid: cb38b1d4ff3e45240bcaf7d08a568785,
         type: 3}
       propertyPath: fadeTime
@@ -6613,18 +6613,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
---- !u!114 &1957316668 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2603147381039233731, guid: efe266538a8dcda4dbd04fbff7997053,
-    type: 3}
-  m_PrefabInstance: {fileID: 1957316666}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2122212609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6813,7 +6801,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

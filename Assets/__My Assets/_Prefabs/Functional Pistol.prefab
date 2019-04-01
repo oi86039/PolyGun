@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 222838954736845286}
   - component: {fileID: 114078743778815228}
   m_Layer: 5
-  m_Name: Health
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Score:000000
 --- !u!1 &1217700713052784
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,13 +408,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361969813170980}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 23.29, y: 2.41, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4958880911013858}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!1 &1382498299824508
 GameObject:
   m_ObjectHideFlags: 0
@@ -5912,7 +5912,9 @@ MonoBehaviour:
   firing: 0
   ammo: 30
   reserve: 150
-  EmptyTimeLimit: 3
+  EmptyTimeLimit: 2
+  score: 0
+  scoreText: {fileID: 114078743778815228}
   audios:
   - {fileID: 8300000, guid: 95e838e0a30c748cb9d08f70fd02e578, type: 3}
   - {fileID: 8300000, guid: 3c1de4fe05be44abe9dfc42da59d5269, type: 3}
