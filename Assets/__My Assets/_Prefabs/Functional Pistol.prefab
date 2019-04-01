@@ -5890,7 +5890,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   timeLimit: 6
-  ReloadTimeLimit: 2.5
+  ReloadTimeLimit: 1.2
   PistolOffset: {fileID: 0}
   leftHandedMode: 0
   QuitTimeLimit: 5
@@ -5910,8 +5910,8 @@ MonoBehaviour:
   firemode: 0
   fireRate: 800
   firing: 0
-  ammo: 30
-  reserve: 150
+  ammo: 50
+  reserve: 250
   EmptyTimeLimit: 2
   score: 0
   scoreText: {fileID: 114078743778815228}

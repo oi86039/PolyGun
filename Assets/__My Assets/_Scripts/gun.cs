@@ -10,6 +10,7 @@ public enum FIRE_MODE { PISTOL, BURST, AUTO };
 public class gun : MonoBehaviour
 {
     public GameObject player;
+    public OVRScreenFade fade;
 
     float timer; //Respawn timer
     public float timeLimit; //Time before respawn
@@ -61,6 +62,7 @@ public class gun : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        fade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
         player = GameObject.Find("LocalAvatarWithGrab");
         PistolOffset = GameObject.Find("PistolOffset").transform;
         LeftGrabber = GameObject.Find("AvatarGrabberLeft").GetComponent<OVRGrabber>();
@@ -97,10 +99,15 @@ public class gun : MonoBehaviour
             QuitTimer += Time.deltaTime;
             Quit.gameObject.transform.parent.gameObject.SetActive(true);
             Quit.text = "Quitting to Main Menu\n---\n" + (QuitTimeLimit - QuitTimer).ToString("F4");
+            if (QuitTimer >= QuitTimeLimit - 1)
+            {
+                fade.FadeOut();
+            }
             if (QuitTimer >= QuitTimeLimit)
             {
                 SceneManager.LoadScene(0);
             }
+
         }
         else
         {
@@ -241,6 +248,8 @@ public class gun : MonoBehaviour
         if (ammo == 0 && reserve == 0)
         {
             EmptyTimer += Time.deltaTime;
+            if (EmptyTimer >= EmptyTimeLimit - 1)
+                fade.FadeOut();
             if (EmptyTimer >= EmptyTimeLimit)
                 SceneManager.LoadScene("Game Over");
         }

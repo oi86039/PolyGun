@@ -36,8 +36,11 @@ public class pixel : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("laser")) {
+        if (!collision.gameObject.CompareTag("pixel"))
+        {
             fx.Play();
         }
+        //if (collision.gameObject.CompareTag("laser")) {
+        //}
     }
 }

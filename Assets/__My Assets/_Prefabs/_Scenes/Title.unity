@@ -1149,7 +1149,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050067877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -98}
+  m_LocalPosition: {x: 0, y: 0, z: -92}
   m_LocalScale: {x: 1.8042, y: 1.8042, z: 1.3596632}
   m_Children: []
   m_Father: {fileID: 2122212615}
@@ -1157,7 +1157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.47123975}
   m_AnchorMax: {x: 0.5, y: 0.47123975}
-  m_AnchoredPosition: {x: -0.135818, y: 5.913108}
+  m_AnchoredPosition: {x: -0.135818, y: 10.2}
   m_SizeDelta: {x: 347.56125, y: 93.562416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050067879
@@ -1187,13 +1187,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 50
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'C1726: INT OVERFLOW'
+  m_Text: POLYGUN VR
 --- !u!222 &1050067880
 CanvasRenderer:
   m_ObjectHideFlags: 0

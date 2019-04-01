@@ -7,6 +7,8 @@ public class teleport : MonoBehaviour
 {
 
     public float speed;
+    private float defSpeed;
+    public float speedModifier;
 
     public Transform player;
     public Transform gun;
@@ -38,6 +40,7 @@ public class teleport : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        defSpeed = speed;
         player = GameObject.Find("LocalAvatarWithGrab").transform;
         gun = GameObject.Find("Functional Pistol").transform;
         hotBod.constraints = RigidbodyConstraints.FreezeAll;
@@ -81,6 +84,7 @@ public class teleport : MonoBehaviour
                     transform.localScale = Vector3.MoveTowards(transform.localScale, cubeScale, 0.01f);
                     hotBod.velocity = Vector3.zero;
                     transform.position = Vector3.MoveTowards(transform.position, cubePos, speed); //Move to original position
+                    speed += speedModifier;
                     //transform.rotation = cubeRot;
                 }
             }
@@ -89,6 +93,7 @@ public class teleport : MonoBehaviour
                 transform.localScale = cubeScale;
                 hotBod.constraints = RigidbodyConstraints.FreezePosition;
                 timer = 0;
+                speed = defSpeed;
                // manager.TurnOff(9);
             }//Turn off teleporters
         }

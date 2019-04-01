@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8116cb705c32e1469917e2e9fc97410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
+  speed: 0.2
+  speedModifier: 0.1
   player: {fileID: 0}
   gun: {fileID: 0}
   spawnPos: {fileID: 0}

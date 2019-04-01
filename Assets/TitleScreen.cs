@@ -13,6 +13,7 @@ public class TitleScreen : MonoBehaviour
     public GameObject teleText;
     public bool play = false;
     public bool quit = false;
+    public float timer;
 
     // Use this for initialization
     void Start()
@@ -22,6 +23,12 @@ public class TitleScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (quit) {
+            timer += Time.deltaTime;
+            if (timer >= 1)
+                Application.Quit();
+        }
+
         if (teleporter.position != button.position && play)
             teleporter.position = Vector3.MoveTowards(teleporter.position, buttonLocation, 0.05f);
     }
@@ -37,7 +44,6 @@ public class TitleScreen : MonoBehaviour
         {
             quit = true;
             //Quit Applicaiton
-            Application.Quit();
         }
     }
 

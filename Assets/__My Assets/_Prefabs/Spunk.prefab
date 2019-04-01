@@ -124,11 +124,12 @@ MonoBehaviour:
   cubes_Count: 0
   health: 1
   damage: 0
-  timeLimit: 10
+  timeLimit: 15
   horizontalSpeed: 0.3
   verticalSpeed: 1
   distThreshold: 10
   Player: {fileID: 0}
+  gun: {fileID: 0}
   TimeLimit: 3
   distance: 0
   id: 0

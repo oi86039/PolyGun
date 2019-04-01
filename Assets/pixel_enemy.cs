@@ -37,7 +37,7 @@ public class pixel_enemy : MonoBehaviour
         foreach (Transform child in transform)
         {//Set health for all child objects
             child.gameObject.GetComponent<pixel>().health = health;
-            child.gameObject.GetComponent<pixel>().timeLimit = timeLimit;
+            child.gameObject.GetComponent<pixel>().timeLimit = TimeLimit;
         }
     }
 
@@ -54,7 +54,7 @@ public class pixel_enemy : MonoBehaviour
 
 
         //Check if dead
-        if (transform.childCount < cubes_Count / 2)
+        if (transform.childCount < (cubes_Count *5)/8 )
         { //if dead
           //Stop behaving
             dead = true;
