@@ -77,7 +77,7 @@ public class teleport : MonoBehaviour
                 //Maybe change color too
                 timer += Time.deltaTime;
 
-                if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick)) timer = timeLimit+1;
+                //if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick)) timer = timeLimit+1;
 
                 if (timer >= timeLimit)
                 {
@@ -105,11 +105,11 @@ public class teleport : MonoBehaviour
             }
             if (!gun.GetComponent<OVRGrabbable>().isGrabbed) //Teleport Gun
             {
-                if (gun.position != gunPos)
-                {
-                    gun.position = Vector3.MoveTowards(gun.position, gunPos, 0.13f);
-                    gun.rotation = gunRot;                                //Play sound
-                }
+               // if (gun.position != gunPos)
+               // {
+               //     gun.position = gunPos;
+               //     gun.rotation = gunRot;                                //Play sound
+               // }
             }
             if (transform.position != cubePos) {
                 transform.position = Vector3.MoveTowards(transform.position, cubePos, 0.13f);

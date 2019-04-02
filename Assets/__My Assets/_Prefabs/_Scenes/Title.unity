@@ -901,6 +901,7 @@ MonoBehaviour:
   teleText: {fileID: 0}
   play: 0
   quit: 0
+  timer: 0
 --- !u!1 &941896761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1354,7 @@ MonoBehaviour:
   teleText: {fileID: 0}
   play: 0
   quit: 0
+  timer: 0
 --- !u!1 &1228238052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6225,7 +6227,7 @@ PrefabInstance:
     - target: {fileID: 114693920538137088, guid: cb38b1d4ff3e45240bcaf7d08a568785,
         type: 3}
       propertyPath: SceneTimeLimit
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114693920538137088, guid: cb38b1d4ff3e45240bcaf7d08a568785,
         type: 3}
@@ -6610,6 +6612,10 @@ PrefabInstance:
     - target: {fileID: 4660621310658468, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266125335, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}
+      propertyPath: fadeTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe266538a8dcda4dbd04fbff7997053, type: 3}

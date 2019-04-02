@@ -179,6 +179,8 @@ public class gun : MonoBehaviour
             //If not grabbing
             timer += Time.deltaTime;
             //Respawn Gun
+            if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick))
+                timer = timeLimit += 1;
 
             //Move gun back to center
             if (timer >= timeLimit)
