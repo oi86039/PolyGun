@@ -7,6 +7,7 @@ public enum enemyID { SPUNK, SQUASH, STRETCH };
 public class pixel_enemy : MonoBehaviour
 {
     public bool dead;
+    public bool deSpawned;
 
     public int cubes_Count; //Number of cubes in list 
     public int health;
@@ -45,26 +46,44 @@ public class pixel_enemy : MonoBehaviour
     void Update()
     {
         distance = Vector3.Distance(transform.position, Player.transform.position);
-        //Activate behavior if in proximity
-        if (distance <= distThreshold * 2 && !dead) //If in proximity with player
-            //Behavior function run
-            Chase(id);
-        else
-            Behave(id);
-
-
-        //Check if dead
-        if (transform.childCount < (cubes_Count *5)/8 )
-        { //if dead
-          //Stop behaving
-            dead = true;
-            foreach (Transform child in transform)
-                child.gameObject.GetComponent<pixel>().health = 0;
-        }
-        if (transform.childCount <= 0)
+        //Spawn if in proximity
+        if (distance <= distThreshold * 3 && !dead) //If in proximity with player
         {
-            gun.GetComponent<gun>().score += 90;            //Explode
-            Destroy(gameObject);
+            for (int j = 0; j < transform.childCount; j++)
+            {
+                transform.GetChild(j).gameObject.SetActive(true); //Spawn all enemy things
+                deSpawned = false;
+            }
+        }
+        else {
+            for (int j = 0; j < transform.childCount; j++)
+            {
+                transform.GetChild(j).gameObject.SetActive(false); //Despawn all things
+                deSpawned = true;
+            }
+        }
+
+        if (!dead || !deSpawned) //Only act if !dead or !offScreen
+        {
+            if (distance <= distThreshold * 2 && !dead) //If in proximity with player
+                                                        //Behavior function run
+                Chase(id);
+            else
+                Behave(id);
+
+            //Check if dead
+            if (transform.childCount < (cubes_Count * 5) / 8)
+            { //if dead
+              //Stop behaving
+                dead = true;
+                foreach (Transform child in transform)
+                    child.gameObject.GetComponent<pixel>().health = 0;
+            }
+            if (transform.childCount <= 0)
+            {
+                gun.GetComponent<gun>().score += 90;            //Explode
+                Destroy(gameObject);
+            }
         }
     }
 

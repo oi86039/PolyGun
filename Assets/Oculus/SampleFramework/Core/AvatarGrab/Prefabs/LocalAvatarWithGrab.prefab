@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 1
-  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  fadeColor: {r: 1, g: 0.6761364, b: 0, a: 1}
   fadeOnStart: 1
   renderQueue: 5000
 --- !u!1 &1137063464848526
