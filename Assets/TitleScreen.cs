@@ -15,18 +15,22 @@ public class TitleScreen : MonoBehaviour
     public bool quit = false;
     public float timer;
 
+    public OVRScreenFade fade;
+    bool isQuitExecuting;
+
     // Use this for initialization
     void Start()
     {
+
+        fade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (quit) {
-            timer += Time.deltaTime;
-            if (timer >= 1)
-                Application.Quit();
+        if (quit)
+        {
         }
 
         if (teleporter.position != button.position && play)
@@ -43,8 +47,20 @@ public class TitleScreen : MonoBehaviour
         else if ((collision.gameObject.CompareTag("laser") || collision.gameObject.CompareTag("tCube") || collision.gameObject.CompareTag("gun")) && button.gameObject.tag.Equals("Quit"))
         {
             quit = true;
-            //Quit Applicaiton
+            FadeToQuit();
         }
+    }
+
+    IEnumerator FadeToQuit()
+    {
+        if (isQuitExecuting)
+            yield break;
+
+        isQuitExecuting = true;
+
+        fade.FadeOut();
+        yield return new WaitForSeconds(1);
+        Application.Quit();
     }
 
 

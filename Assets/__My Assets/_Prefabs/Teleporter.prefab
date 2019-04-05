@@ -4719,7 +4719,11 @@ MonoBehaviour:
   Player: {fileID: 0}
   distance: 0
   MaxDistance: 90
+  cubeDistance: 0
+  cubeMaxDistance: 2
   fx: {fileID: 4138057890041694071}
+  cube: {fileID: 0}
+  homingSpeed: 0.001
 --- !u!1 &1169431308825890
 GameObject:
   m_ObjectHideFlags: 0

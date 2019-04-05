@@ -581,15 +581,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 757121701998861319, guid: a86b65389bb28dd4e9bc802fc359f252,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7550950454727250751, guid: a86b65389bb28dd4e9bc802fc359f252,
         type: 3}
       propertyPath: m_TagString
       value: teleporter_special
+      objectReference: {fileID: 0}
+    - target: {fileID: 757121701998861319, guid: a86b65389bb28dd4e9bc802fc359f252,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1910908048821386, guid: a86b65389bb28dd4e9bc802fc359f252, type: 3}
       propertyPath: m_TagString
@@ -902,6 +902,7 @@ MonoBehaviour:
   play: 0
   quit: 0
   timer: 0
+  fade: {fileID: 0}
 --- !u!1 &941896761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1356,7 @@ MonoBehaviour:
   play: 0
   quit: 0
   timer: 0
+  fade: {fileID: 0}
 --- !u!1 &1228238052
 GameObject:
   m_ObjectHideFlags: 0
@@ -6483,7 +6485,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &1950458769
 MeshCollider:
@@ -6668,8 +6670,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
-  m_CollisionDetection: 0
+  m_Constraints: 110
+  m_CollisionDetection: 2
 --- !u!114 &2122212612
 MonoBehaviour:
   m_ObjectHideFlags: 0

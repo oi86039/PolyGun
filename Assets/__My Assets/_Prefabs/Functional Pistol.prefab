@@ -5700,7 +5700,7 @@ MonoBehaviour:
   ReloadTimeLimit: 1.2
   PistolOffset: {fileID: 0}
   leftHandedMode: 0
-  QuitTimeLimit: 5
+  QuitTimeLimit: 3
   Quit: {fileID: 7040995520568831876}
   hotBod: {fileID: 54649131082662272}
   lazur: {fileID: 1689458338255908, guid: bf7a88ab05afd1b4fb70c2e9fdbacf4a, type: 3}
@@ -5715,7 +5715,7 @@ MonoBehaviour:
   LeftGrabber: {fileID: 0}
   RightGrabber: {fileID: 0}
   firemode: 0
-  fireRate: 800
+  fireRate: 750
   firing: 0
   ammo: 50
   reserve: 250

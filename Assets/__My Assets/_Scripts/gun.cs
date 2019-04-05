@@ -55,6 +55,8 @@ public class gun : MonoBehaviour
     public int score;
     public Text scoreText;
 
+    bool isQuitExecuting;
+
     private AudioSource sound;
     public AudioClip[] audios;
     int audioIndex;
@@ -99,15 +101,10 @@ public class gun : MonoBehaviour
             QuitTimer += Time.deltaTime;
             Quit.gameObject.transform.parent.gameObject.SetActive(true);
             Quit.text = "Quitting to Main Menu\n---\n" + (QuitTimeLimit - QuitTimer).ToString("F4");
-            if (QuitTimer >= QuitTimeLimit - 1)
-            {
-                fade.FadeOut();
-            }
             if (QuitTimer >= QuitTimeLimit)
             {
-                SceneManager.LoadScene(0);
+                StartCoroutine(FadeToQuit("Title"));
             }
-
         }
         else
         {
@@ -250,10 +247,8 @@ public class gun : MonoBehaviour
         if (ammo == 0 && reserve == 0)
         {
             EmptyTimer += Time.deltaTime;
-            if (EmptyTimer >= EmptyTimeLimit - 1)
-                fade.FadeOut();
             if (EmptyTimer >= EmptyTimeLimit)
-                SceneManager.LoadScene("Game Over");
+                StartCoroutine(FadeToQuit("Game Over"));
         }
 
         //Check state
@@ -402,6 +397,18 @@ public class gun : MonoBehaviour
             PistolOffset.position = new Vector3(0.05f, 0.02f, -0.11f);
             LeftIndicator.text = "R";
         }
+    }
+
+    IEnumerator FadeToQuit(string name)
+    {
+        if (isQuitExecuting)
+            yield break;
+
+        isQuitExecuting = true;
+
+        fade.FadeOut();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(name);
     }
 
     IEnumerator Vibration(float frequency, float amplitude, float timeLimit)
