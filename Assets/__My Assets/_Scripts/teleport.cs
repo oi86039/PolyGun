@@ -105,11 +105,11 @@ public class teleport : MonoBehaviour
             }
             if (!gun.GetComponent<OVRGrabbable>().isGrabbed) //Teleport Gun
             {
-               // if (gun.position != gunPos)
-               // {
-               //     gun.position = gunPos;
-               //     gun.rotation = gunRot;                                //Play sound
-               // }
+                if (gun.position != gunPos)
+                {
+                    gun.position = gunPos;
+                    gun.rotation = gunRot;                                //Play sound
+                }
             }
             if (transform.position != cubePos) {
                 transform.position = Vector3.MoveTowards(transform.position, cubePos, 0.13f);

@@ -97,6 +97,7 @@ public class pixel_enemy : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
+                    timeLimit = Random.Range(0.2f, 3);
                     //TimeLimit += Random.Range(-0.001, 0.1);
                     horizontalSpeed *= -1;
                     //Shoot
@@ -114,6 +115,7 @@ public class pixel_enemy : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
+                    timeLimit = Random.Range(0.2f, 3);
                     // TimeLimit += Random.Range(-1, 1);
                     horizontalSpeed *= -1;
                     //Shoot
@@ -138,6 +140,7 @@ public class pixel_enemy : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
+                    timeLimit = Random.Range(1, 3);
                     horizontalSpeed *= -1;
                     timer = 0;
                 }
@@ -150,6 +153,7 @@ public class pixel_enemy : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
+                    timeLimit = Random.Range(1, 3);
                     horizontalSpeed *= -1;
                     timer = 0;
                 }
