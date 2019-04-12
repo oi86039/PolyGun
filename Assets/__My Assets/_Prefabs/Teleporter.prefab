@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1090105054495224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.2846311, y: 1.68, z: 0.12683448}
-  m_LocalScale: {x: 1.3720405, y: 1.3720405, z: 1.3720405}
+  m_LocalScale: {x: 1.6933725, y: 1.6933725, z: 1.6933725}
   m_Children:
   - {fileID: 7475409006874016799}
   - {fileID: 4630203862018460}
@@ -4722,8 +4722,6 @@ MonoBehaviour:
   cubeDistance: 0
   cubeMaxDistance: 2
   fx: {fileID: 4138057890041694071}
-  cube: {fileID: 0}
-  homingSpeed: 0.001
 --- !u!1 &1169431308825890
 GameObject:
   m_ObjectHideFlags: 0
@@ -4748,7 +4746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169431308825890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.215, y: -0.165, z: 0.241}
+  m_LocalPosition: {x: 0.215, y: -0.032, z: 0.163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4858319102090700}
@@ -4778,7 +4776,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636475814526802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.225, y: -0.166, z: 0.248}
+  m_LocalPosition: {x: -0.225, y: -0.033000007, z: 0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4858319102090700}

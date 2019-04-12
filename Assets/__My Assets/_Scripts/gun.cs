@@ -23,6 +23,8 @@ public class gun : MonoBehaviour
     public float QuitTimeLimit;
     public Text Quit;
 
+    bool isVibrating;
+
     public Rigidbody hotBod;
     public GameObject lazur;
     public Transform spawnPos;
@@ -115,7 +117,7 @@ public class gun : MonoBehaviour
         //If we grab 
         if (grabbable.isGrabbed)
         {
-            Vibration(0.1f, 0.1f, 0.1f);
+            //StartCoroutine(Vibration(1, 0.2f, 0.1f));
             hotBod.constraints = RigidbodyConstraints.None;
             timer = 0.0f;
 
@@ -259,7 +261,9 @@ public class gun : MonoBehaviour
             if (ReloadInput && ammo < FullAmmo && reserve > 0)
             { //Can reload
                 isReloading = true;
+
                 ReloadTimer += Time.deltaTime;
+                StartCoroutine(Vibration(0.2f, 0.5f, 0.1f));
                 AmmoText.color = Color.yellow;
                 AmmoText.text = "---\n" + (ReloadTimeLimit - ReloadTimer).ToString("F2");
                 if (ReloadTimer >= ReloadTimeLimit)
@@ -277,7 +281,7 @@ public class gun : MonoBehaviour
                         reserve = 0;
                     }
                     ReloadTimer = 0.0f;
-                    StartCoroutine(Vibration(0.2f, 0.5f, 0.1f));
+                    StartCoroutine(Vibration(0.2f, 0.7f, 0.1f));
                 }
             }
             else //Not Reloading
@@ -297,7 +301,7 @@ public class gun : MonoBehaviour
     void RespawnGun() //Reset gun position to teleported position
     {
         //timer = 0.0f;
-        transform.position = Vector3.MoveTowards(transform.position, originalPos, 0.15f);
+        transform.position = Vector3.MoveTowards(transform.position, originalPos, 0.25f);
 
         if (transform.position == originalPos)
         {
@@ -358,7 +362,7 @@ public class gun : MonoBehaviour
             if (flag == 1)
             {
                 AmmoText.text = "Rel\n" + reserve;
-                if (!isReloading) StartCoroutine(Vibration(0.2f, 0.3f, 0.1f));
+                if (!isReloading) StartCoroutine(Vibration(0.2f, 0.1f, 0.1f));
             }
             else if (flag == 2)
                 AmmoText.text = "--" + "\n" + (timeLimit - timer).ToString("F2"); //Display countdown
@@ -413,6 +417,12 @@ public class gun : MonoBehaviour
 
     IEnumerator Vibration(float frequency, float amplitude, float timeLimit)
     {
+
+        if (isVibrating)
+            yield break;
+
+        isVibrating = true;
+
         if (grabbable.grabbedBy == LeftGrabber)
         {
             OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.LTouch);
@@ -432,6 +442,7 @@ public class gun : MonoBehaviour
         {
             OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         }
+        isVibrating = false;
 
     }
 
