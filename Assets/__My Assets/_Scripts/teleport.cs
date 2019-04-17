@@ -10,6 +10,8 @@ public class teleport : MonoBehaviour
     private float defSpeed;
     public float speedModifier;
 
+    public AudioSource teleportSound;
+
     public Transform player;
     public Transform gun;
     public GameObject spawnPos; //Where player will spawn
@@ -138,7 +140,10 @@ public class teleport : MonoBehaviour
             spawnPos = other.gameObject.transform.parent.Find("spawnPos").gameObject; //Replace current spawnPos with touched one.
             gunPos = other.gameObject.transform.parent.Find("GunPos").gameObject.transform.position; //Replace current spawnPos with touched one.
             cubePos = other.gameObject.transform.parent.Find("CubePos").gameObject.transform.position; //Replace current spawnPos with touched one.;
-                                                                                                       //Play teleport fx
+
+            teleportSound.Play();
+            
+            //Play teleport fx
             moveToTeleport = true;
             hotBod.constraints = RigidbodyConstraints.FreezeAll;
             gun.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

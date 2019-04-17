@@ -6,6 +6,7 @@ public class pixel : MonoBehaviour
 {
     float timer;
     public float timeLimit;
+    public AudioSource hurtSound;
 
     public int health; //Health before cube flies off
     private Rigidbody rb;
@@ -39,6 +40,12 @@ public class pixel : MonoBehaviour
         if (!collision.gameObject.CompareTag("pixel"))
         {
             fx.Play();
+            hurtSound.pitch = Random.Range(0.5f, 1f);
+            if (collision.gameObject.CompareTag("laser"))
+                hurtSound.volume = 0.55f;
+            else
+                hurtSound.volume = 0.10f;
+            hurtSound.Play();
         }
         //if (collision.gameObject.CompareTag("laser")) {
         //}
