@@ -11,12 +11,14 @@ public class lazur : MonoBehaviour
     public float timeLimit;
     public GameObject player;
     public GameObject gun;
+    public gun gunn;
     // Use this for initialization
     void Start()
     {
+        gun = GameObject.FindGameObjectWithTag("gun");
+        gunn = gun.GetComponent<gun>();
         hotBod = GetComponent<Rigidbody>();
         hotBod.AddForce(transform.up * speed, ForceMode.Impulse);
-
     }
 
     // Update is called once per frame
@@ -33,11 +35,11 @@ public class lazur : MonoBehaviour
         //if contacted with enemies, spawn explosion fx and destroy projectile
         else if (collision.gameObject.CompareTag("pixel"))
         {
-            gun.GetComponent<gun>().score += 10;
+            gunn.score += 10;
             collision.gameObject.GetComponent<pixel>().health--;
             float chance = Random.Range(0, 1);
             if (chance >= .99f) //Ammo
-                gun.GetComponent<gun>().reserve += 15;
+                gunn.reserve += 15;
         }
         //else if (collision.gameObject.CompareTag("pickUpHealth"))
         //{

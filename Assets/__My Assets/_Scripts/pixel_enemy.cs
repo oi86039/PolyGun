@@ -14,6 +14,7 @@ public class pixel_enemy : MonoBehaviour
     public int damage;
     public float timeLimit;
     public float horizontalSpeed;
+    public float direction;
     public float verticalSpeed;
 
     public float distThreshold;
@@ -33,7 +34,11 @@ public class pixel_enemy : MonoBehaviour
         Player = GameObject.Find("LocalAvatarWithGrab");
         gun = GameObject.Find("Functional Pistol");
         timeLimit = Random.Range(1, 3);
-        horizontalSpeed = Random.Range(0.1f, 0.5f);
+        horizontalSpeed = Random.Range(0.3f, 0.7f);
+        //Select random starting direciton
+        float dirVal = Random.value * 100;
+        if (dirVal <= 50) direction = 1;
+        else direction = -1;
         cubes_Count = transform.childCount;
         foreach (Transform child in transform)
         {//Set health for all child objects
@@ -92,14 +97,15 @@ public class pixel_enemy : MonoBehaviour
         switch (id)
         {
             case enemyID.SPUNK:
-                transform.RotateAround(Player.transform.position, Vector3.up, horizontalSpeed); //Rotates Around Player
+                transform.RotateAround(Player.transform.position, Vector3.up, horizontalSpeed*direction); //Rotates Around Player
 
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
-                    timeLimit = Random.Range(0.2f, 3);
+                    timeLimit = Random.Range(0.08f, 1.5f);
                     //TimeLimit += Random.Range(-0.001, 0.1);
-                    horizontalSpeed *= -1;
+                    horizontalSpeed = Random.Range(0.3f, 0.7f);
+                    direction *= -1;
                     //Shoot
                     //GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0,0,0,0) );
                     //instance.GetComponent<enemyLazer>().damage = damage;
@@ -111,13 +117,14 @@ public class pixel_enemy : MonoBehaviour
 
                 break;
             case enemyID.STRETCH:
-                transform.RotateAround(Player.transform.position, Vector3.up, -horizontalSpeed); //Rotates Around Player
+                transform.RotateAround(Player.transform.position, Vector3.up, -horizontalSpeed * direction); //Rotates Around Player
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
-                    timeLimit = Random.Range(0.2f, 3);
+                    timeLimit = Random.Range(0.08f, 1.5f);
                     // TimeLimit += Random.Range(-1, 1);
-                    horizontalSpeed *= -1;
+                    horizontalSpeed = Random.Range(0.3f, 0.7f);
+                    direction *= -1;
                     //Shoot
                     //GameObject instance = Instantiate(evil_projectile, transform.position, new Quaternion(0, 0, 0, 0));
                     //instance.GetComponent<enemyLazer>().damage = damage;
@@ -136,12 +143,13 @@ public class pixel_enemy : MonoBehaviour
         switch (id)
         {
             case enemyID.SPUNK:
-                transform.position += Vector3.right * (horizontalSpeed / 15); //Rotates Around Player
+                transform.position += Vector3.right * (horizontalSpeed / 15 * direction); //Rotates Around Player
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
                     timeLimit = Random.Range(1, 3);
-                    horizontalSpeed *= -1;
+                    horizontalSpeed = Random.Range(0.2f, 0.5f);
+                    direction *= -1;
                     timer = 0;
                 }
                 break;
@@ -149,12 +157,13 @@ public class pixel_enemy : MonoBehaviour
 
                 break;
             case enemyID.STRETCH:
-                transform.position += Vector3.right * (horizontalSpeed / 15); //Rotates Around Player
+                transform.position += Vector3.right * (horizontalSpeed / 15 * direction); //Rotates Around Player
                 timer += Time.deltaTime;
                 if (timer >= TimeLimit)
                 {
                     timeLimit = Random.Range(1, 3);
-                    horizontalSpeed *= -1;
+                    horizontalSpeed = Random.Range(0.3f, 0.7f);
+                    direction *= -1;
                     timer = 0;
                 }
                 break;

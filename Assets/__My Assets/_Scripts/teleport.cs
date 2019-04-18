@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class teleport : MonoBehaviour
 {
-
+    [Header("Movement/Speed")]
     public float speed;
     private float defSpeed;
     public float speedModifier;
+    bool moveToTeleport;
+    bool special; //if hit special teleporter
 
+    [Header("Sound")]
     public AudioSource teleportSound;
+    public AudioSource flyingSound;
 
+    [Header("Player/GameObject Locations")]
     public Transform player;
     public Transform gun;
     public GameObject spawnPos; //Where player will spawn
@@ -21,23 +26,25 @@ public class teleport : MonoBehaviour
     public Vector3 gunPos; //Where Pistol will spawn
     public Quaternion gunRot; //Where Pistol will spawn
     public Vector3 offset;
-   // public Teleport_Manager manager;
-    public Rigidbody hotBod;
-    public OVRGrabbable grabbable;
-
     public int current; //Current teleporter
 
-    bool moveToTeleport;
+    // public Teleport_Manager manager;
 
+    [Header("Physics Systems")]
+    public Rigidbody hotBod;
+    Collider cubeCollider;
+
+    [Header("Oculus")]
+    public OVRGrabbable grabbable;
+    public OVRScreenFade fade;
+
+    [Header("Timers")]
     public float timer;
     public float timeLimit = 2;
     bool scaled; //True if velocity has been scaled
-
     float SceneTimer;
     public float SceneTimeLimit;
-    bool special; //if hit special teleporter
 
-    public OVRScreenFade fade;
 
     // Use this for initialization
     void Start()
@@ -46,15 +53,16 @@ public class teleport : MonoBehaviour
         player = GameObject.Find("LocalAvatarWithGrab").transform;
         gun = GameObject.Find("Functional Pistol").transform;
         hotBod.constraints = RigidbodyConstraints.FreezeAll;
-       // current = manager.teleporters.Length + 1;
+        // current = manager.teleporters.Length + 1;
         cubePos = transform.position;
         cubeRot = transform.rotation;
+        cubeCollider = GetComponent<Collider>();
         cubeScale = transform.localScale;
         gunPos = gun.transform.position;
         gunRot = gun.transform.rotation;
         hotBod = GetComponent<Rigidbody>();
         fade = GameObject.Find("CenterEyeAnchor").GetComponent<OVRScreenFade>();
-       // grabbable = GetComponent<OVRGrabbable>();
+        // grabbable = GetComponent<OVRGrabbable>();
     }
 
     // Update is called once per frame
@@ -63,6 +71,9 @@ public class teleport : MonoBehaviour
 
         if (grabbable.isGrabbed)
         {
+            if (flyingSound.isPlaying)
+                flyingSound.Stop();
+
             transform.localScale = cubeScale;
             hotBod.constraints = RigidbodyConstraints.None;
             //manager.TurnOn(current);
@@ -76,6 +87,8 @@ public class teleport : MonoBehaviour
             if (transform.position != cubePos) //If Cube isn't in original position, move it while keeping teleporters on
             {
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+                if (!flyingSound.isPlaying)
+                    flyingSound.Play();
                 //Maybe change color too
                 timer += Time.deltaTime;
 
@@ -92,18 +105,22 @@ public class teleport : MonoBehaviour
             }
             else
             {
+                if (flyingSound.isPlaying)
+                flyingSound.Stop();
                 transform.localScale = cubeScale;
                 hotBod.constraints = RigidbodyConstraints.FreezePosition;
                 timer = 0;
                 speed = defSpeed;
-               // manager.TurnOff(9);
+                // manager.TurnOff(9);
             }//Turn off teleporters
         }
 
-        if (moveToTeleport) { //Teleport player slowly
-            if (player.transform.position != spawnPos.transform.position) { 
+        if (moveToTeleport)
+        { //Teleport player slowly
+            if (player.transform.position != spawnPos.transform.position)
+            {
                 player.transform.position = Vector3.MoveTowards(player.transform.position, spawnPos.transform.position, 0.13f);
-                                //Play sound
+                //Play sound
             }
             if (!gun.GetComponent<OVRGrabbable>().isGrabbed) //Teleport Gun
             {
@@ -113,11 +130,12 @@ public class teleport : MonoBehaviour
                     gun.rotation = gunRot;                                //Play sound
                 }
             }
-            if (transform.position != cubePos) {
+            if (transform.position != cubePos)
+            {
                 transform.position = Vector3.MoveTowards(transform.position, cubePos, 0.13f);
                 transform.rotation = cubeRot;                                //Play sound
             }
-            
+
             if (player.transform.position == spawnPos.transform.position)
                 moveToTeleport = false;
         }
@@ -135,14 +153,17 @@ public class teleport : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("teleporter") || other.gameObject.CompareTag("teleporter_special"))
+
+        if (moveToTeleport)
+            Physics.IgnoreCollision(other, cubeCollider);
+        else if (other.gameObject.CompareTag("teleporter") || other.gameObject.CompareTag("teleporter_special"))
         {
             spawnPos = other.gameObject.transform.parent.Find("spawnPos").gameObject; //Replace current spawnPos with touched one.
             gunPos = other.gameObject.transform.parent.Find("GunPos").gameObject.transform.position; //Replace current spawnPos with touched one.
             cubePos = other.gameObject.transform.parent.Find("CubePos").gameObject.transform.position; //Replace current spawnPos with touched one.;
 
             teleportSound.Play();
-            
+
             //Play teleport fx
             moveToTeleport = true;
             hotBod.constraints = RigidbodyConstraints.FreezeAll;
@@ -150,7 +171,8 @@ public class teleport : MonoBehaviour
             gun.gameObject.GetComponent<gun>().originalPos = gunPos;
             gun.gameObject.GetComponent<gun>().originalRot = gunRot;
 
-            if (other.gameObject.CompareTag("teleporter_special")) {
+            if (other.gameObject.CompareTag("teleporter_special"))
+            {
                 special = true;
                 fade.FadeOut();
             }
@@ -160,6 +182,7 @@ public class teleport : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.CompareTag("laser"))
         {
             hotBod.velocity = collision.gameObject.GetComponent<Rigidbody>().velocity;

@@ -9,59 +9,63 @@ public enum FIRE_MODE { PISTOL, BURST, AUTO };
 
 public class gun : MonoBehaviour
 {
+    [Header("Player/GameObject Locations")]
     public GameObject player;
-    public OVRScreenFade fade;
-
-    float timer; //Respawn timer
-    public float timeLimit; //Time before respawn
-    float ReloadTimer; //Reload timer
-    public float ReloadTimeLimit; //Time before reload completion
-
-    public Transform PistolOffset;
-    public bool leftHandedMode;
-    float QuitTimer;
-    public float QuitTimeLimit;
-    public Text Quit;
-
-    bool isVibrating;
-
-    public Rigidbody hotBod;
-    public GameObject lazur;
     public Transform spawnPos;
-    public Text AmmoText;
-    public Text LeftIndicator;
-    public Text ModeIndicator; //Indicates fire mode
-    public GameObject ReloadIndicator; //Says to press x/b
     public Vector3 originalPos; //Original position of gun
     public Quaternion originalRot; //Original rotation of gun
+    public Transform PistolOffset;
+
+    [Header("Physics Systems")]
+    public Rigidbody hotBod;
     private ParticleSystem shootSpark;
 
+    [Header("Oculus")]
+    bool isVibrating;
     bool TriggerInput;
     bool ReloadInput;
     bool fireModeInput;
     public OVRGrabbable grabbable;
     public OVRGrabber LeftGrabber; //Left Controller
     public OVRGrabber RightGrabber; //Right Controller
+    public OVRScreenFade fade;
 
+    [Header("Sound")]
+    private AudioSource sound;
+    public AudioClip[] audios;
+    int audioIndex;
+
+    [Header("Timers")]
+    float timer; //Respawn timer
+    public float timeLimit; //Time before respawn
+    float ReloadTimer; //Reload timer
+    public float ReloadTimeLimit; //Time before reload completion
+    float EmptyTimer;
+    public float EmptyTimeLimit;//Time till ammo recharge
+    public bool leftHandedMode;
+    bool isQuitExecuting;
+    float QuitTimer;
+    public float QuitTimeLimit;
+    public Text Quit;
+
+    [Header("UI")]
+    public Text AmmoText;
+    public Text LeftIndicator;
+    public Text ModeIndicator; //Indicates fire mode
+    public GameObject ReloadIndicator; //Says to press x/b
+    public int score;
+    public Text scoreText;
+
+    [Header("Weapon")]
+    public GameObject lazur;
     public FIRE_MODE firemode;
     public float fireRate;
     public bool firing; //Is the gun firing right now?
     bool isReloading;
     public int ammo;
-    public int reserve; //Reload into ammo when ammo = 0;
-    float EmptyTimer;
-    public float EmptyTimeLimit;//Time till ammo recharge
+    public int reserve; //Reload into ammo when ammo = 0;   
     int FullAmmo;
-    int FullReserve;
-
-    public int score;
-    public Text scoreText;
-
-    bool isQuitExecuting;
-
-    private AudioSource sound;
-    public AudioClip[] audios;
-    int audioIndex;
+    //  int FullReserve;
 
     // Use this for initialization
     void Start()
@@ -75,7 +79,7 @@ public class gun : MonoBehaviour
         score = 0;
 
         FullAmmo = ammo;
-        FullReserve = reserve;
+        //FullReserve = reserve;
         firemode = FIRE_MODE.PISTOL;
         ModeIndicator.text = "Pistol";
         audioIndex = 0;

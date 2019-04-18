@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class pixel : MonoBehaviour
 {
+    Renderer rend;
+    bool blinking;
+
     float timer;
     public float timeLimit;
     public AudioSource hurtSound;
@@ -16,6 +19,8 @@ public class pixel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
         fx = GetComponent<ParticleSystem>();
     }
@@ -31,7 +36,12 @@ public class pixel : MonoBehaviour
             //Vector3 force = new Vector3(Random.Range(0, 2), Random.Range(0, 2), Random.Range(0, 2)); //Add random force
             //rb.AddForce(force, ForceMode.Impulse);
             timer += Time.deltaTime;
-            if (timer >= timeLimit) Destroy(gameObject);
+
+            if (timer >= timeLimit - 1 && !blinking)
+            {
+                StartCoroutine(Blinking());
+            }
+            else if (timer >= timeLimit) Destroy(gameObject);
         }
     }
 
@@ -50,4 +60,17 @@ public class pixel : MonoBehaviour
         //if (collision.gameObject.CompareTag("laser")) {
         //}
     }
+
+    IEnumerator Blinking() //repurposed from burst fire
+    {
+        float blinkDelay = 60 / 70; //10 = fire rate
+        blinking = true;
+        for (int i = 0; i < 3; i++)
+        {
+            rend.enabled = !rend.enabled;
+            yield return new WaitForSeconds(blinkDelay); // wait till the next round
+        }
+        blinking = false;
+    }
+
 }

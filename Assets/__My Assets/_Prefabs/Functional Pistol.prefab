@@ -1944,9 +1944,9 @@ ParticleSystem:
       time: 0
       countCurve:
         serializedVersion: 2
-        minMaxState: 0
-        scalar: 11.1
-        minScalar: 0
+        minMaxState: 3
+        scalar: 21.22
+        minScalar: 11.25
         maxCurve:
           serializedVersion: 2
           m_Curve:
@@ -5694,33 +5694,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  fade: {fileID: 0}
-  timeLimit: 6
-  ReloadTimeLimit: 1.2
-  PistolOffset: {fileID: 0}
-  leftHandedMode: 0
-  QuitTimeLimit: 3
-  Quit: {fileID: 7040995520568831876}
-  hotBod: {fileID: 54649131082662272}
-  lazur: {fileID: 1689458338255908, guid: bf7a88ab05afd1b4fb70c2e9fdbacf4a, type: 3}
   spawnPos: {fileID: 4106088319427728}
-  AmmoText: {fileID: 114706811188859478}
-  LeftIndicator: {fileID: 114124014294918602}
-  ModeIndicator: {fileID: 632930746210807530}
-  ReloadIndicator: {fileID: 4369650626486577757}
   originalPos: {x: 0, y: 0, z: 0}
   originalRot: {x: 0, y: 0, z: 0, w: 0}
+  PistolOffset: {fileID: 0}
+  hotBod: {fileID: 54649131082662272}
   grabbable: {fileID: 114436118183564218}
   LeftGrabber: {fileID: 0}
   RightGrabber: {fileID: 0}
-  firemode: 0
-  fireRate: 750
-  firing: 0
-  ammo: 50
-  reserve: 250
-  EmptyTimeLimit: 2
-  score: 0
-  scoreText: {fileID: 114078743778815228}
+  fade: {fileID: 0}
   audios:
   - {fileID: 8300000, guid: 95e838e0a30c748cb9d08f70fd02e578, type: 3}
   - {fileID: 8300000, guid: 3c1de4fe05be44abe9dfc42da59d5269, type: 3}
@@ -5733,6 +5715,24 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0761756d9eefc4892b3c0c4fb26d94db, type: 3}
   - {fileID: 8300000, guid: 025aa80ce83394dbb984ac462d965da6, type: 3}
   - {fileID: 8300000, guid: c9d7d6af631e772419b67cb9017e0752, type: 3}
+  timeLimit: 6
+  ReloadTimeLimit: 1.2
+  EmptyTimeLimit: 2
+  leftHandedMode: 0
+  QuitTimeLimit: 3
+  Quit: {fileID: 7040995520568831876}
+  AmmoText: {fileID: 114706811188859478}
+  LeftIndicator: {fileID: 114124014294918602}
+  ModeIndicator: {fileID: 632930746210807530}
+  ReloadIndicator: {fileID: 4369650626486577757}
+  score: 0
+  scoreText: {fileID: 114078743778815228}
+  lazur: {fileID: 1689458338255908, guid: bf7a88ab05afd1b4fb70c2e9fdbacf4a, type: 3}
+  firemode: 0
+  fireRate: 750
+  firing: 0
+  ammo: 50
+  reserve: 250
 --- !u!1 &1650149801964700
 GameObject:
   m_ObjectHideFlags: 0
