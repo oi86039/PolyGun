@@ -332,7 +332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361969813170980}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 23.29, y: 2.41, z: -0}
+  m_LocalPosition: {x: 23.29, y: 2.41, z: -0.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4958880911013858}
@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 198877356471250236}
   - component: {fileID: 114436118183564218}
   - component: {fileID: 114467668857212708}
+  - component: {fileID: 6177705098355974256}
   m_Layer: 0
   m_Name: Functional Pistol
   m_TagString: gun
@@ -1635,7 +1636,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 13.64, y: 2.35, z: -0.5}
+    m_Position: {x: 13.64, y: 2.35, z: -0}
     m_Rotation: {x: 0, y: 90, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -5733,6 +5734,25 @@ MonoBehaviour:
   firing: 0
   ammo: 50
   reserve: 250
+--- !u!95 &6177705098355974256
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617001536731796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29b641b7081a5d746b25eee787410382, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1650149801964700
 GameObject:
   m_ObjectHideFlags: 0

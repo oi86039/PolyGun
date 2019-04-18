@@ -128,6 +128,7 @@ MonoBehaviour:
   damage: 0
   timeLimit: 15
   horizontalSpeed: 0.3
+  direction: 0
   verticalSpeed: 1
   distThreshold: 10
   Player: {fileID: 0}

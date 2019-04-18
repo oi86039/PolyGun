@@ -57,6 +57,7 @@ public class gun : MonoBehaviour
     public Text scoreText;
 
     [Header("Weapon")]
+    public Animator anim;
     public GameObject lazur;
     public FIRE_MODE firemode;
     public float fireRate;
@@ -201,6 +202,7 @@ public class gun : MonoBehaviour
         {
             case (FIRE_MODE.PISTOL):
                 firing = true;
+                anim.SetTrigger(0);
                 GameObject instance = Instantiate(lazur, spawnPos.position, spawnPos.rotation);
                 instance.GetComponent<lazur>().gun = gameObject;
                 //Play particle effect
