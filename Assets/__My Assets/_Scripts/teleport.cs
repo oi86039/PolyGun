@@ -92,6 +92,11 @@ public class teleport : MonoBehaviour
                 //Maybe change color too
                 timer += Time.deltaTime;
 
+                if (!moveToTeleport)
+                {
+                    Vector2 input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+                    hotBod.AddForce(new Vector3(input.x, input.y, 0)*4);
+                }
                 //if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick)) timer = timeLimit+1;
 
                 if (timer >= timeLimit)
@@ -106,7 +111,7 @@ public class teleport : MonoBehaviour
             else
             {
                 if (flyingSound.isPlaying)
-                flyingSound.Stop();
+                    flyingSound.Stop();
                 transform.localScale = cubeScale;
                 hotBod.constraints = RigidbodyConstraints.FreezePosition;
                 timer = 0;

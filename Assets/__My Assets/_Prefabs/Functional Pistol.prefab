@@ -777,7 +777,6 @@ GameObject:
   - component: {fileID: 198877356471250236}
   - component: {fileID: 114436118183564218}
   - component: {fileID: 114467668857212708}
-  - component: {fileID: 6177705098355974256}
   m_Layer: 0
   m_Name: Functional Pistol
   m_TagString: gun
@@ -5728,31 +5727,13 @@ MonoBehaviour:
   ReloadIndicator: {fileID: 4369650626486577757}
   score: 0
   scoreText: {fileID: 114078743778815228}
+  anim: {fileID: 0}
   lazur: {fileID: 1689458338255908, guid: bf7a88ab05afd1b4fb70c2e9fdbacf4a, type: 3}
   firemode: 0
   fireRate: 750
   firing: 0
   ammo: 50
   reserve: 250
---- !u!95 &6177705098355974256
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1617001536731796}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 29b641b7081a5d746b25eee787410382, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1650149801964700
 GameObject:
   m_ObjectHideFlags: 0
