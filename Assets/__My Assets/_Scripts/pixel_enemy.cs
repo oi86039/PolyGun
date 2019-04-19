@@ -17,12 +17,17 @@ public class pixel_enemy : MonoBehaviour
     public float direction;
     public float verticalSpeed;
 
+    public AudioSource deathSound;
+
     public float distThreshold;
     public GameObject Player;
     public GameObject gun;
     //public GameObject evil_projectile;
     float timer;
     public float TimeLimit;
+
+    float deathTimer;
+    float deathTimeLimit = 0.2f;
 
     public float distance;
 
@@ -86,8 +91,16 @@ public class pixel_enemy : MonoBehaviour
             }
             if (transform.childCount <= 0)
             {
-                gun.GetComponent<gun>().score += 90;            //Explode
-                Destroy(gameObject);
+                if (!deathSound.isPlaying)
+                {
+                    deathSound.Play();
+                }
+                deathTimer += Time.deltaTime;
+                if (deathTimer >= deathTimeLimit)
+                {
+                    gun.GetComponent<gun>().score += 90;            //Explode
+                    Destroy(gameObject);
+                }
             }
         }
     }

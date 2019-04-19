@@ -21,23 +21,25 @@ public class gun : MonoBehaviour
     private ParticleSystem shootSpark;
 
     [Header("Oculus")]
-    bool isVibrating;
-    bool TriggerInput;
-    bool ReloadInput;
-    bool fireModeInput;
     public OVRGrabbable grabbable;
     public OVRGrabber LeftGrabber; //Left Controller
     public OVRGrabber RightGrabber; //Right Controller
     public OVRScreenFade fade;
+    bool isVibrating;
+    bool TriggerInput;
+    bool ReloadInput;
+    bool fireModeInput;
+
 
     [Header("Sound")]
-    private AudioSource sound;
-    public AudioClip[] audios;
-    int audioIndex;
+    public AudioSource laserSound;
+    public AudioClip[] laserAudioList;
+    public AudioSource uiSound;
+    public AudioClip[] uiAudioList;
 
     [Header("Timers")]
-    float timer; //Respawn timer
     public float timeLimit; //Time before respawn
+    float timer; //Respawn timer
     float ReloadTimer; //Reload timer
     public float ReloadTimeLimit; //Time before reload completion
     float EmptyTimer;
@@ -82,10 +84,8 @@ public class gun : MonoBehaviour
         //FullReserve = reserve;
         firemode = FIRE_MODE.PISTOL;
         ModeIndicator.text = "Pistol";
-        audioIndex = 0;
         UpdateAmmo();
         //hotBod = GetComponent<Rigidbody>();
-        sound = GetComponent<AudioSource>();
         shootSpark = GetComponent<ParticleSystem>();
         originalPos = transform.position;
         originalRot = transform.rotation;
@@ -165,10 +165,9 @@ public class gun : MonoBehaviour
             {
                 if (ammo >= 1)
                     Fire();
-                else if (!sound.isPlaying)
+                else if (!uiSound.isPlaying)
                 {
-                    sound.clip = audios[10];
-                    sound.Play();
+                    uiSound.PlayOneShot(uiAudioList[0]);
                 }
             }
             if (fireModeInput)
@@ -206,9 +205,9 @@ public class gun : MonoBehaviour
                 //Play particle effect
                 shootSpark.Play();
                 //Play lazr sound
-                sound.clip = audios[audioIndex];
-                sound.Play();
-                audioIndex = Random.Range(0, 8); //Randomly select next sound
+                //if (laserSound.isPlaying) sound.Stop();
+                laserSound.clip = laserAudioList[Random.Range(0, 8)];
+                laserSound.Play();
                 StartCoroutine(Vibration(1, 30, 0.1f));
                 ammo--;
                 firing = false;
@@ -232,12 +231,23 @@ public class gun : MonoBehaviour
             firemode = FIRE_MODE.BURST;
             ModeIndicator.text = "BURST";
             ModeIndicator.color = Color.yellow;
+            //if (!uiSound.isPlaying)
+            //{
+                uiSound.clip = uiAudioList[2];
+                uiSound.Play();
+            //}
+
         }
         else if (firemode == FIRE_MODE.BURST)
         {
             firemode = FIRE_MODE.AUTO;
             ModeIndicator.text = "AUTO";
             ModeIndicator.color = new Color(244 / 255f, 119 / 255f, 17 / 255f);
+            //if (!sound.isPlaying)
+            // {
+            uiSound.clip = uiAudioList[3];
+            uiSound.Play();
+            // }
         }
 
         else if (firemode == FIRE_MODE.AUTO)
@@ -245,6 +255,11 @@ public class gun : MonoBehaviour
             firemode = FIRE_MODE.PISTOL;
             ModeIndicator.text = "PISTOL";
             ModeIndicator.color = new Color(.29f, 2.24f, 2.26f);
+            // if (!sound.isPlaying)
+            // {
+            uiSound.clip = uiAudioList[1];
+            uiSound.Play();
+            // }
         }
     }
 
@@ -328,9 +343,8 @@ public class gun : MonoBehaviour
                 //Play particle effect
                 shootSpark.Play();
                 //Play lazr sound
-                sound.clip = audios[audioIndex];
-                sound.Play();
-                audioIndex = Random.Range(0, 8); //Randomly select next sound
+                laserSound.clip = laserAudioList[Random.Range(0, 8)];
+                laserSound.Play();
                 StartCoroutine(Vibration(1, 30, 0.1f));
                 ammo--;
             }

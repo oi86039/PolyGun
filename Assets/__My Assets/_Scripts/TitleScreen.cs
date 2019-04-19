@@ -31,6 +31,7 @@ public class TitleScreen : MonoBehaviour
     {
         if (quit)
         {
+            StartCoroutine(FadeToQuit());
         }
 
         if (teleporter.position != button.position && play)
