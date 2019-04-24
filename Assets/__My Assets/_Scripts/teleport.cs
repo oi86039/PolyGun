@@ -95,7 +95,11 @@ public class teleport : MonoBehaviour
                 if (!moveToTeleport)
                 {
                     Vector2 input = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
-                    hotBod.AddForce(new Vector3(input.x, input.y, 0)*4);
+                    //if (hotBod.velocity.sqrMagnitude < 0.5 && hotBod.velocity.sqrMagnitude > 800)
+                    //{
+                    //    hotBod.AddRelativeForce(Vector3.up * 800, ForceMode.Force);
+                    //}
+                    hotBod.AddForce(new Vector3(input.x, input.y, 0) * 4);
                 }
                 //if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick)) timer = timeLimit+1;
 
@@ -124,7 +128,7 @@ public class teleport : MonoBehaviour
         { //Teleport player slowly
             if (player.transform.position != spawnPos.transform.position)
             {
-                player.transform.position = Vector3.MoveTowards(player.transform.position, spawnPos.transform.position, 0.13f);
+                player.transform.position = Vector3.MoveTowards(player.transform.position, spawnPos.transform.position, 0.15f);
                 //Play sound
             }
             if (!gun.GetComponent<OVRGrabbable>().isGrabbed) //Teleport Gun

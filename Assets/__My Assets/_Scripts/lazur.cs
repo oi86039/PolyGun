@@ -22,8 +22,13 @@ public class lazur : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (hotBod.velocity.sqrMagnitude < speed*speed)
+        {
+            hotBod.AddRelativeForce(Vector3.up * speed, ForceMode.Force);
+        }
+
         timer += Time.deltaTime;
         if (timer >= timeLimit) Destroy(gameObject);
     }
@@ -38,8 +43,10 @@ public class lazur : MonoBehaviour
             gunn.score += 10;
             collision.gameObject.GetComponent<pixel>().health--;
             float chance = Random.Range(0, 1);
-            if (chance >= .99f) //Ammo
-                gunn.reserve += 15;
+            //if (chance >= .75f) //Ammo
+            //  gunn.reserve += 15;
+           // Destroy(gameObject);
+
         }
         //else if (collision.gameObject.CompareTag("pickUpHealth"))
         //{

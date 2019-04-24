@@ -6,6 +6,7 @@ public class pixel : MonoBehaviour
 {
     Renderer rend;
     bool blinking;
+    bool deathFX;
 
     float timer;
     public float timeLimit;
@@ -30,6 +31,11 @@ public class pixel : MonoBehaviour
     {
         if (health <= 0)
         { //If not attached to enemy anymore
+            if (!deathFX) //Play death particle fx once if dead.
+            {
+                fx.Play();
+                deathFX = true;
+            }
             transform.parent = null;
             rb.isKinematic = false;
             rb.useGravity = true;

@@ -233,8 +233,7 @@ public class gun : MonoBehaviour
             ModeIndicator.color = Color.yellow;
             //if (!uiSound.isPlaying)
             //{
-                uiSound.clip = uiAudioList[2];
-                uiSound.Play();
+            uiSound.PlayOneShot(uiAudioList[2]);
             //}
 
         }
@@ -245,8 +244,7 @@ public class gun : MonoBehaviour
             ModeIndicator.color = new Color(244 / 255f, 119 / 255f, 17 / 255f);
             //if (!sound.isPlaying)
             // {
-            uiSound.clip = uiAudioList[3];
-            uiSound.Play();
+            uiSound.PlayOneShot(uiAudioList[3]);
             // }
         }
 
@@ -257,8 +255,7 @@ public class gun : MonoBehaviour
             ModeIndicator.color = new Color(.29f, 2.24f, 2.26f);
             // if (!sound.isPlaying)
             // {
-            uiSound.clip = uiAudioList[1];
-            uiSound.Play();
+            uiSound.PlayOneShot(uiAudioList[1]);
             // }
         }
     }
@@ -277,7 +274,7 @@ public class gun : MonoBehaviour
         {
             //Reloading
             // if (ReloadInput && ammo <= 0 && reserve > 0)
-            if (ReloadInput && ammo < FullAmmo && reserve > 0)
+            if (ReloadInput && ammo < FullAmmo && reserve > 0 && !firing)
             { //Can reload
                 isReloading = true;
 
@@ -320,7 +317,7 @@ public class gun : MonoBehaviour
     void RespawnGun() //Reset gun position to teleported position
     {
         //timer = 0.0f;
-        transform.position = Vector3.MoveTowards(transform.position, originalPos, 0.25f);
+        transform.position = Vector3.MoveTowards(transform.position, originalPos, 0.35f);
 
         if (transform.position == originalPos)
         {

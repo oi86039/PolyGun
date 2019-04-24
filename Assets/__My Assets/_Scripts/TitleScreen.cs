@@ -45,7 +45,7 @@ public class TitleScreen : MonoBehaviour
             play = true;
             button.GetChild(1).GetComponent<Text>().color = Color.green;
         }
-        else if ((collision.gameObject.CompareTag("laser") || collision.gameObject.CompareTag("tCube") || collision.gameObject.CompareTag("gun")) && button.gameObject.tag.Equals("Quit"))
+        else if ((collision.gameObject.CompareTag("laser") && button.gameObject.tag.Equals("Quit")))
         {
             quit = true;
             FadeToQuit();

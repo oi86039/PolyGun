@@ -1632,28 +1632,11 @@ PrefabInstance:
       propertyPath: m_snapOffset
       value: 
       objectReference: {fileID: 551481007}
-    - target: {fileID: 1219905769540674314, guid: ce041610bea56044690a24a708c4520a,
+    - target: {fileID: 114467668857212708, guid: ce041610bea56044690a24a708c4520a,
         type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -50.699997
-      objectReference: {fileID: 0}
-    - target: {fileID: 1219905769540674314, guid: ce041610bea56044690a24a708c4520a,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.199997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106088319427728, guid: ce041610bea56044690a24a708c4520a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106088319427728, guid: ce041610bea56044690a24a708c4520a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106088319427728, guid: ce041610bea56044690a24a708c4520a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
+      propertyPath: PistolOffset
+      value: 
+      objectReference: {fileID: 551481007}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce041610bea56044690a24a708c4520a, type: 3}
 --- !u!4 &1747245608 stripped
@@ -2087,7 +2070,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 94
+  m_Constraints: 110
   m_CollisionDetection: 0
 --- !u!114 &2122212612
 MonoBehaviour:
