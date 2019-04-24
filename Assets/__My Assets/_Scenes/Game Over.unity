@@ -1483,7 +1483,7 @@ PrefabInstance:
     - target: {fileID: 114693920538137088, guid: cb38b1d4ff3e45240bcaf7d08a568785,
         type: 3}
       propertyPath: SceneTimeLimit
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7293219864210786319, guid: cb38b1d4ff3e45240bcaf7d08a568785,
         type: 3}
