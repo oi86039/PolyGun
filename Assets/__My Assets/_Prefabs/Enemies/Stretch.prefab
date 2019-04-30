@@ -127,12 +127,12 @@ MonoBehaviour:
   horizontalSpeed: 0.3
   direction: 0
   verticalSpeed: 1
+  deathPercent: 0.67
   deathSound: {fileID: 2432437844512683166}
   distThreshold: 10
   Player: {fileID: 0}
   gun: {fileID: 0}
   TimeLimit: 3
-  deathTimeLimit: 0.1
   distance: 0
   id: 0
 --- !u!82 &2432437844512683166

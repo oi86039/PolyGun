@@ -17,6 +17,9 @@ public class pixel_enemy : MonoBehaviour
     public float direction;
     public float verticalSpeed;
 
+    [Range(0, 1)]
+    public float deathPercent;
+
     public AudioSource deathSound;
 
     public float distThreshold;
@@ -82,7 +85,7 @@ public class pixel_enemy : MonoBehaviour
                 Behave(id);
 
             //Check if dead
-            if (transform.childCount < (cubes_Count * 5) / 8)
+            if (transform.childCount < (int)(cubes_Count * deathPercent)) //If cubes count is less than given percentage
             { //if dead
               //Stop behaving
                 dead = true;

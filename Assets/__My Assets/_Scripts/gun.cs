@@ -61,7 +61,8 @@ public class gun : MonoBehaviour
     [Header("Weapon")]
     public GameObject lazur;
     public FIRE_MODE firemode;
-    public float fireRate;
+    public float burstFireRate;
+    public float autoFireRate;
     public bool firing; //Is the gun firing right now?
     bool isReloading;
     public int ammo;
@@ -214,11 +215,11 @@ public class gun : MonoBehaviour
                 break;
             case (FIRE_MODE.AUTO):
                 if (!firing)
-                    StartCoroutine(BurstFire());
+                    StartCoroutine(BurstFire(autoFireRate));
                 break;
             case (FIRE_MODE.BURST):
                 if (!firing)
-                    StartCoroutine(BurstFire());
+                    StartCoroutine(BurstFire(burstFireRate));
                 break;
         }
 
@@ -327,9 +328,9 @@ public class gun : MonoBehaviour
         }
     }
 
-    IEnumerator BurstFire()
+    IEnumerator BurstFire(float fireRate)
     {
-        float bulletDelay = 60 / fireRate; //10 = fire rate
+        float bulletDelay = 60 / fireRate; 
         firing = true;
         for (int i = 0; i < 3; i++)
         {
